@@ -60,24 +60,34 @@ function MySidebar() {
           </Card.Header>
           <Card.Body>
             <Container className=" p-2 ">
-              <Row className="d-flex flex-column " >
-              <Col className="me-2">
-                    <Image src="https://placehold.jp/50x50.png" roundedCircle />
+              <Row className="d-flex flex-column ">
+                <Col className="">
+                  <Col className=" d-flex border border-primary">
+                    <div>
+                    <Image
+                      src="https://placehold.jp/50x50.png"
+                      className="me-2"
+                      roundedCircle
+                    />
+                    </div>
+
+                    <div>
+                      <div>
+                        <Card.Title className="d-flex h6">
+                          nome cognome
+                        </Card.Title>
+                        <Card.Subtitle className="my-2 text-muted h6">
+                          Carriera
+                        </Card.Subtitle>
+                        <div>
+                          <Button variant="outline-secondary" size="sm">
+                            <HiUserAdd />
+                            Collegati
+                          </Button>{" "}
+                        </div>
+                      </div>
+                    </div>
                   </Col>
-                <Col className="d-flex d-flex">
-                  <div>
-                    <Card.Title className="d-flex h6">nome cognome</Card.Title>
-                    <Card.Subtitle className="my-2 text-muted h6">
-                      Carriera
-                    </Card.Subtitle>
-                  </div>
-                </Col>
-                <Col>
-                  <div className=" d-flex ">
-                    <Button variant="outline-secondary" size="sm">
-                    <HiUserAdd /> Collegati
-                    </Button>{" "}
-                  </div>
                 </Col>
               </Row>
             </Container>
