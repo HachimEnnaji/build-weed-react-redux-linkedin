@@ -27,6 +27,7 @@ import React from "react";
 import logo from "../LinkedIn_icon.svg.png";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { FaPencilAlt } from "react-icons/fa";
+import MySidebar from "../components/MySidebar";
 
 function MyMain() {
   return (
@@ -70,7 +71,11 @@ function MyMain() {
             </Card.Body>
           </Card>
         </Col>
-        <Col xs={3}>tizio</Col>
+        <Col xs={3}>
+          {" "}
+          <MySidebar />{" "}
+        </Col>{" "}
+        {/* Questa sezione deve sparire quando la magina non è lg */}
       </Row>
     </Container>
   );
