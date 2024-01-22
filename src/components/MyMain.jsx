@@ -22,7 +22,7 @@
 //     <>
 //       <MyProfile />
 //     </>
-=======
+
 import React from "react";
 import logo from "../LinkedIn_icon.svg.png";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
@@ -48,7 +48,9 @@ function MyMain() {
                   />
                 </div>
                 <div>
-                  <FaPencilAlt />
+                  <Button className="bg-transparent text-dark rounded-circle border-0">
+                    <FaPencilAlt />
+                  </Button>
                 </div>
               </div>
               <Row>
@@ -58,7 +60,11 @@ function MyMain() {
                   <span>Lavora spanr</span>
                   <a href="#">Informazioni di contatto</a>
                 </Col>
-                <Col xs={3}>hello</Col>
+                <Col xs={3}>
+                  <a href="#">
+                    <h5>Posto di Lavoro</h5>
+                  </a>
+                </Col>
               </Row>
               <Card.Text></Card.Text>
             </Card.Body>
@@ -67,7 +73,6 @@ function MyMain() {
         <Col xs={3}>tizio</Col>
       </Row>
     </Container>
->>>>>>> 7daff5ba0e1aa12043399002c33fc5a12bacaf45
   );
 }
 
