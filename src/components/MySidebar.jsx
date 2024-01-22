@@ -62,7 +62,7 @@ function MySidebar() {
             <Container className=" p-2 ">
               <Row className="d-flex flex-column ">
                 <Col className="">
-                  <Col className=" d-flex border border-primary">
+                  <Col className=" d-flex">
                     <div>
                     <Image
                       src="https://placehold.jp/50x50.png"
@@ -70,7 +70,6 @@ function MySidebar() {
                       roundedCircle
                     />
                     </div>
-
                     <div>
                       <div>
                         <Card.Title className="d-flex h6">
