@@ -21,7 +21,13 @@ function MyProfile() {
     <>
       <Col xs={9}>
         <Card className="m-3">
-          <Card.Img variant="top" src="" height={200} className="object-fit-cover" />
+          <Card.Img
+            variant="top"
+            src="https://images.unsplash.com/photo-1607706189992-eae578626c86?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="background"
+            height={200}
+            className="object-fit-cover "
+          />
           <Card.Body>
             <div className="d-flex justify-content-between mb-3">
               <div>
@@ -47,13 +53,17 @@ function MyProfile() {
                 </h3>
                 <p>{data.title}</p>
                 <span>{data.area}</span>
-                <Button variant="primary" className="border-0 bg-transparent text-primary" onClick={handleShow}>
+                <Button
+                  variant="primary"
+                  className="border-0 bg-transparent text-primary button-hover"
+                  onClick={handleShow}
+                >
                   Informazioni di contatto
                 </Button>
                 <p>{data.bio}</p>
                 <Modal show={show} onHide={handleClose}>
                   <Modal.Header closeButton>
-                    <Modal.Title>
+                    <Modal.Title className="text-capitalize">
                       {data.name} {data.surname}
                     </Modal.Title>
                   </Modal.Header>
@@ -71,9 +81,7 @@ function MyProfile() {
                       className="img-contain"
                     />
                     <Container fluid>
-                      <p className="m-0">
-                        <strong>Il tuo Profilo</strong>
-                      </p>
+                      <p className="m-0 ">Il tuo Profilo</p>
                       {/* <Link to={"/:id"} > </Link> */}
                       <a href={`${link}${data._id}`} className="link-hover">
                         {endpoint}
@@ -84,12 +92,9 @@ function MyProfile() {
                   <Container className="d-flex pb-4">
                     <VscMail className="fs-2" />
                     <Container fluid>
-                      <p className="m-0">
-                        <strong>Email</strong>
-                      </p>
+                      <p className="m-0">Email</p>
                       {/* <Link to={"/:id"} > </Link> */}
                       <a href={`mailto:${data.email}`} className="link-hover">
-                        {" "}
                         {data.email}
                       </a>
                     </Container>
@@ -97,9 +102,16 @@ function MyProfile() {
                 </Modal>
               </Col>
               <Col xs={3}>
-                <a href="#">
-                  <h5>Posto di Lavoro</h5>
-                </a>
+                <Container className="d-flex align-items-center">
+                  <img
+                    src="https://www.ecommerceacademy.it/wp-content/uploads/2023/05/Epicode-coding-bootcamp_ecommerce-academy_b2commerce_900x900.jpg"
+                    alt="epicode logo"
+                    height={30}
+                  />
+                  <a href="https://epicode.com" className="link-hover">
+                    <h6 className="text-black  m-0 hover">EPICODE</h6>
+                  </a>
+                </Container>
               </Col>
             </Row>
             <Card.Text></Card.Text>
