@@ -18,10 +18,21 @@ body {
 div img.img-contain {
   object-fit: contain;
 }
-div a.link-hover {
+div a.link-hover,
+div button.button-hover {
   color: #0a66c6;
   text-decoration: none;
 }
+div button.button-hover:hover,
 div a.link-hover:hover {
   text-decoration: underline;
+}
+/* div button.button-hover {
+  color: #0a66c6;
+  text-decoration: none;
+} */
+h6.hover:hover {
+  color: #0a66c6 !important;
+  text-decoration: underline !important;
+  transition: all 150ms;
 }
