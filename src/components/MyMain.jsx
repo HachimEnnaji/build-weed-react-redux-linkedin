@@ -17,7 +17,7 @@ function MyMain() {
 
   useEffect(() => {
     const handleFetch = async () => {
-      await dispatch(fetchSearch());
+      await dispatch(fetchSearch("me"));
     };
 
     handleFetch();

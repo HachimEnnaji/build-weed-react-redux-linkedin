@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button, Card, Col, Container, Modal, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { FaPencilAlt } from "react-icons/fa";
-import { Link } from "react-bootstrap-icons";
 import { VscMail } from "react-icons/vsc";
 // import { logo } from "../LinkedIn_icon.svg.png";
 
@@ -20,7 +19,7 @@ function MyProfile() {
   return (
     <>
       <Col xs={9}>
-        <Card className="m-3">
+        <Card className="my-3">
           <Card.Img
             variant="top"
             src="https://images.unsplash.com/photo-1607706189992-eae578626c86?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
