@@ -3,11 +3,15 @@ import "./App.css";
 import MyNavbar from "./components/MyNavbar";
 import MyMain from "./components/MyMain";
 
+
 function App() {
   return (
     <div className="App">
+
       <MyNavbar />
       <MyMain />
+     
+
     </div>
   );
 }
