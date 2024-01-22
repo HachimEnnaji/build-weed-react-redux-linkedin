@@ -7,3 +7,11 @@ form svg {
   top: 50%;
   left: 0;
 } */
+
+body {
+  background-color: lightgrey;
+}
+
+.navPlaceholder {
+  width: 300px;
+}
