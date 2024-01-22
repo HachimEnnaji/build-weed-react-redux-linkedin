@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import logo from "../LinkedIn_icon.svg.png";
 import { Button, Container, Form, Nav, NavDropdown, Navbar, Offcanvas } from "react-bootstrap";
-import { FaSearch } from "react-icons/fa";
 import { FaCaretDown, FaUserCircle } from "react-icons/fa";
-import { AiFillHome } from "react-icons/ai";
-import { HiUsers } from "react-icons/hi2";
-import { BsHandbagFill } from "react-icons/bs";
-import { BiSolidMessageRoundedDots, BiSolidGrid } from "react-icons/bi";
-import { FaBell } from "react-icons/fa";
+import { BiSolidGrid } from "react-icons/bi";
+import { UseSelector, useSelector } from "react-redux";
 
 function MyNavbar() {
+  const data = useSelector((state) => state.user.data);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -39,7 +36,7 @@ function MyNavbar() {
                   viewBox="0 0 24 24"
                   data-supported-dps="24x24"
                   fill="currentColor"
-                  class="mercado-match"
+                  className="mercado-match"
                   width="24"
                   height="24"
                   focusable="false"
@@ -54,7 +51,7 @@ function MyNavbar() {
                   viewBox="0 0 24 24"
                   data-supported-dps="24x24"
                   fill="currentColor"
-                  class="mercado-match"
+                  className="mercado-match"
                   width="24"
                   height="24"
                   focusable="false"
@@ -69,7 +66,7 @@ function MyNavbar() {
                   viewBox="0 0 24 24"
                   data-supported-dps="24x24"
                   fill="currentColor"
-                  class="mercado-match"
+                  className="mercado-match"
                   width="24"
                   height="24"
                   focusable="false"
@@ -84,7 +81,7 @@ function MyNavbar() {
                   viewBox="0 0 24 24"
                   data-supported-dps="24x24"
                   fill="currentColor"
-                  class="mercado-match"
+                  className="mercado-match"
                   width="24"
                   height="24"
                   focusable="false"
@@ -99,7 +96,7 @@ function MyNavbar() {
                   viewBox="0 0 24 24"
                   data-supported-dps="24x24"
                   fill="currentColor"
-                  class="mercado-match"
+                  className="mercado-match"
                   width="24"
                   height="24"
                   focusable="false"
@@ -111,9 +108,12 @@ function MyNavbar() {
 
               <NavDropdown
                 title={
-                  <span>
-                    <FaUserCircle className="fs-3" /> <br /> Tu
-                  </span>
+                  <>
+                    <>
+                      <img src={data.image} alt="profile" width={26} className="rounded-circle d-block" />
+                    </>
+                    <span>Tu</span>
+                  </>
                 }
                 id="navbarScrollingDropdown"
               >
