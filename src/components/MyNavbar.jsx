@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import logo from "../LinkedIn_icon.svg.png";
-import { Button, Container, Form, Nav, NavDropdown, Navbar, Offcanvas } from "react-bootstrap";
+import { Button, Container, Form, Nav, NavDropdown, NavItem, Navbar, Offcanvas } from "react-bootstrap";
 import { FaCaretDown, FaUserCircle } from "react-icons/fa";
 import { BiSolidGrid } from "react-icons/bi";
 import { UseSelector, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 function MyNavbar() {
   const data = useSelector((state) => state.user.data);
@@ -30,7 +31,7 @@ function MyNavbar() {
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
-              <Nav.Link href="#action1" className="me-3 text-center">
+              <NavLink to={"/"} href="#action1" className="me-3 text-center nav-link text-dark">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -44,7 +45,7 @@ function MyNavbar() {
                   <path d="M23 9v2h-2v7a3 3 0 01-3 3h-4v-6h-4v6H6a3 3 0 01-3-3v-7H1V9l11-7z"></path>
                 </svg>
                 Home
-              </Nav.Link>
+              </NavLink>
               <Nav.Link href="#action2" className="me-3 text-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
