@@ -30,7 +30,7 @@ function MyMain() {
                 <Col xs={9}>
                   <h3>Nome Cognome</h3>
                   <p>Lavora presso</p>
-                  <span>Lavora spanresso</span>
+                  <span>Lavora spanr</span>
                   <a href="#">Informazioni di contatto</a>
                 </Col>
                 <Col xs={3}>hello</Col>
