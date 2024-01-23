@@ -47,7 +47,7 @@ function MySidebar() {
       </Col>
 
       <Col>
-        <Card className="my-3" style={{ width: "18rem" }}>
+        <Card className="my-3 border-bottom" style={{ width: "18rem" }}>
           <Card.Header className="bg-transparent border-0">
             <div className=" p-2 ">
               <Card.Title className="h6 font-weight-bold">
