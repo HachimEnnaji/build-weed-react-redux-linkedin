@@ -7,7 +7,7 @@ import { UseSelector, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 function MyNavbar() {
-  const data = useSelector((state) => state.user.data);
+  const data = useSelector((state) => state.user.profile);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);

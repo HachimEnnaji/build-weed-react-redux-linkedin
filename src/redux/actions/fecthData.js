@@ -1,4 +1,4 @@
-import { setSearchResult } from "../reducers/userSlice";
+import { setProfilesResult, setSearchResult } from "../reducers/userSlice";
 
 export const fetchSearch = (query) => async (dispatch) => {
   const token =
@@ -14,10 +14,19 @@ export const fetchSearch = (query) => async (dispatch) => {
 
     if (response.ok) {
       const data = await response.json();
-      dispatch(setSearchResult(data));
+      if (query === "me") {
+        dispatch(setSearchResult(data));
+      } else {
+        dispatch(setProfilesResult(data));
+      }
     } else {
-      dispatch(setSearchResult(null));
-      throw new Error("Errore nel recupero dei risultati");
+      if (query === "me") {
+        dispatch(setSearchResult(null));
+        throw new Error("Errore nel recupero del profilo personale");
+      } else {
+        dispatch(setProfilesResult([]));
+        throw new Error("Errore nel recupero dei profili");
+      }
     }
   } catch (error) {
     console.error("Errore nel fetch:", error.message);

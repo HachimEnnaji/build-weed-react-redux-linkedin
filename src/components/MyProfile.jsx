@@ -3,19 +3,16 @@ import { Button, Card, Col, Container, Modal, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { FaPencilAlt } from "react-icons/fa";
 import { VscMail } from "react-icons/vsc";
-// import { logo } from "../LinkedIn_icon.svg.png";
 
 function MyProfile() {
-  const data = useSelector((state) => state.user.data);
-  const [show, setShow] = useState(false);
   const endpoint = "profile/";
   const link = "https://striveschool-api.herokuapp.com/api/profile/";
+  const data = useSelector((state) => state.user.profile);
+
+  const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  //   const capitalizeName = (name) => {
-  //     return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
-  //   };
   return (
     <>
       <Col xs={9}>

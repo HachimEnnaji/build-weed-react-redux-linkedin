@@ -1,18 +1,11 @@
-//     <>
-//       <MyProfile />
-//     </>
-
 import React, { useEffect } from "react";
-import logo from "../LinkedIn_icon.svg.png";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
-import { FaPencilAlt } from "react-icons/fa";
+import { Col, Container, Row } from "react-bootstrap";
 import MySidebar from "../components/MySidebar";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { fetchSearch } from "../redux/actions/fecthData";
 import MyProfile from "./MyProfile";
 
 function MyMain() {
-  const data = useSelector((state) => state.user.data);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,9 +14,7 @@ function MyMain() {
     };
 
     handleFetch();
-  }, [dispatch]);
-
-  console.log(data);
+  }, []);
 
   return (
     <Container>
@@ -33,7 +24,7 @@ function MyMain() {
           {" "}
           <MySidebar />{" "}
         </Col>{" "}
-        {/* Questa sezione deve sparire quando la magina non è lg */}
+        {/* Questa sezione deve sparire quando la pagina non è lg */}
       </Row>
     </Container>
   );
