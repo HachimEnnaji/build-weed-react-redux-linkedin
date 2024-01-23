@@ -13,6 +13,7 @@ function HomePages() {
       <Row>
         <Col xs={2}>
           <Card>
+          <Card.Header>Featured</Card.Header>
             <Card.Img variant="top" src="holder.js/100px180" />
             <Card.Body>
               <Card.Title>Card Title</Card.Title>
