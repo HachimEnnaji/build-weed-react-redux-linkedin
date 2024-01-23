@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,15 +10,28 @@ function MyEditedProfile({ show, handleClose }) {
   const myProfile = useSelector((state) => state.user.profile);
 
   const [formData, setFormData] = useState({
-    name: myProfile.name || "",
-    surname: myProfile.surname || "",
-    email: myProfile.email || "",
-    username: myProfile.username || "",
-    bio: myProfile.bio || "",
-    title: myProfile.title || "",
-    area: myProfile.area || "",
-    image: myProfile.image || "",
+    name: "",
+    surname: "",
+    email: "",
+    username: "",
+    bio: "",
+    title: "",
+    area: "",
+    image: "",
   });
+
+  useEffect(() => {
+    setFormData({
+      name: myProfile.name || "",
+      surname: myProfile.surname || "",
+      email: myProfile.email || "",
+      username: myProfile.username || "",
+      bio: myProfile.bio || "",
+      title: myProfile.title || "",
+      area: myProfile.area || "",
+      image: myProfile.image || "",
+    });
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -44,7 +57,6 @@ function MyEditedProfile({ show, handleClose }) {
     // Dispatch an action to update the profile in Redux state
     dispatch(fetchEditData(editedProfile));
 
-    // Close the modal
     handleClose();
   };
 

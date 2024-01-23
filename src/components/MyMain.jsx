@@ -9,11 +9,7 @@ function MyMain() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const handleFetch = async () => {
-      await dispatch(fetchSearch("me"));
-    };
-
-    handleFetch();
+    dispatch(fetchSearch("me"));
   }, []);
 
   return (
