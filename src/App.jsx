@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import MyNavbar from "./components/MyNavbar";
 import MyMain from "./components/MyMain";
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
       <BrowserRouter>
         <MyNavbar />
         <Routes>
-          <Route path="/" element={<MyMain />}></Route>
+          <Route path="/" element={<MyMains/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>
