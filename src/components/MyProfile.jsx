@@ -113,7 +113,15 @@ function MyProfile() {
                 </Container>
               </Col>
             </Row>
-            <Card.Text></Card.Text>
+            <Button variant="primary" className="me-2 rounded-pill">
+              Disponibile per
+            </Button>
+            <Button variant="light" className="me-2 rounded-pill border border-2 border-primary text-primary">
+              Aggiungi sezione del profilo
+            </Button>
+            <Button variant="light" className="me-2 rounded-pill border border-2 border-dark">
+              Altro
+            </Button>
           </Card.Body>
         </Card>
       </Col>
