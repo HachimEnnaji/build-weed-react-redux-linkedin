@@ -3,6 +3,7 @@ import { Button, Card, Col, Container, Modal, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { FaPencilAlt } from "react-icons/fa";
 import { VscMail } from "react-icons/vsc";
+import MyEditedProfile from "./MyEditedProfile";
 
 function MyProfile() {
   const endpoint = "profile/";
@@ -12,6 +13,11 @@ function MyProfile() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  //   form edit
+  const [showForm, setShowForm] = useState(false);
+  const handleCloseEdit = () => setShowForm(false);
+  const handleShowEdit = () => setShowForm(true);
 
   return (
     <>
@@ -37,9 +43,10 @@ function MyProfile() {
                 />
               </div>
               <div>
-                <Button className="bg-transparent text-dark rounded-circle border-0">
+                <Button className="bg-transparent text-dark rounded-circle border-0" onClick={handleShowEdit}>
                   <FaPencilAlt />
                 </Button>
+                <MyEditedProfile show={showForm} handleClose={handleCloseEdit} data={data} />
               </div>
             </div>
             <Row>

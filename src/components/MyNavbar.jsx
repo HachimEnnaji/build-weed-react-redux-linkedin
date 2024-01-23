@@ -4,7 +4,7 @@ import { Button, Container, Form, Nav, NavDropdown, NavItem, Navbar, Offcanvas }
 import { FaCaretDown, FaUserCircle } from "react-icons/fa";
 import { BiSolidGrid } from "react-icons/bi";
 import { UseSelector, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function MyNavbar() {
   const data = useSelector((state) => state.user.profile);
@@ -127,9 +127,11 @@ function MyNavbar() {
                       className="rounded-circle d-block align-self-start mt-1"
                     />
                     <Container fluid className="text-dark">
-                      <p className="text-capitalize my-1 text-dark">
-                        {data.name} {data.surname}
-                      </p>
+                      <Link to="/main">
+                        <p className="text-capitalize my-1 text-dark">
+                          {data.name} {data.surname}
+                        </p>
+                      </Link>
                       <p className="text-capitalize mb-2">{data.title ? data.title : ""}</p>
                     </Container>
                   </Container>

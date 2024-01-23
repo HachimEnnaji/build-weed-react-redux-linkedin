@@ -74,7 +74,7 @@ function MySidebar() {
           {profileObj.map(
             (profile, index) =>
               index < visibleProfiles && (
-                <Card.Body>
+                <Card.Body key={profile._id}>
                   <Container className=" p-2 ">
                     <Row className="d-flex flex-column ">
                       <Col className="">
