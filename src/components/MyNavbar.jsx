@@ -118,7 +118,22 @@ function MyNavbar() {
                 }
                 id="navbarScrollingDropdown"
               >
-                <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action3" className="border-bottom">
+                  <Container fluid className="d-flex p-0 ">
+                    <img
+                      src={data.image}
+                      alt="profile"
+                      width={50}
+                      className="rounded-circle d-block align-self-start mt-1"
+                    />
+                    <Container fluid className="text-dark">
+                      <p className="text-capitalize my-1 text-dark">
+                        {data.name} {data.surname}
+                      </p>
+                      <p className="text-capitalize mb-2">{data.title ? data.title : ""}</p>
+                    </Container>
+                  </Container>
+                </NavDropdown.Item>
                 <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
