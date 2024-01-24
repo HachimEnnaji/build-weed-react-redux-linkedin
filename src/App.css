@@ -57,7 +57,7 @@ h6.hover:hover {
 }
 
 .hoverDiv:hover {
-  background-color: rgb(237, 234, 234);
+  background-color: rgb(237, 234, 234) !important;
   cursor: pointer;
 }
 
@@ -67,4 +67,14 @@ h6.hover:hover {
 
 .modalButtonHover:hover {
   box-shadow: 0 1px 3px rgb(0, 0, 0);
+}
+
+.search-input {
+  position: relative;
+  display: flex; /* Aggiunto per utilizzare il layout flexbox */
+  align-items: center; /* Centra verticalmente gli elementi */
+}
+
+.search-icon {
+  margin-right: 10px;
 }
