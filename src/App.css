@@ -36,3 +36,7 @@ h6.hover:hover {
   text-decoration: underline !important;
   transition: all 150ms;
 }
+
+.fs-7 {
+  font-size: 12px;
+}
