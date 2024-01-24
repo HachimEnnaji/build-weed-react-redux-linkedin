@@ -1,4 +1,4 @@
-import { setProfilesResult, setSearchResult, setAllProfilesResult } from "../reducers/userSlice";
+import { setSearchResult, setAllProfilesResult } from "../reducers/userSlice";
 
 export const fetchSearch = (query) => async (dispatch) => {
   const token =

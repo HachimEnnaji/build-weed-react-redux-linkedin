@@ -6,7 +6,6 @@ import { VscMail } from "react-icons/vsc";
 import { FiPlus } from "react-icons/fi";
 import { fetchExpAction } from "../redux/actions/fetchEditExperience";
 import { FiTrash2 } from "react-icons/fi";
-import { fetchSearch } from "../redux/actions/fecthData";
 import MyEditedProfile from "./MyEditedProfile";
 import MyNewExperience from "./MyNewExperience";
 import MyEditedExperience from "./MyEditedExperience";
@@ -67,7 +66,7 @@ function MyProfile() {
 
   return (
     <>
-      <Row className="w-100 mt-3 ">
+      <Row className="w-100 ">
         <Col>
           <Card className="my-3">
             <Card.Img
@@ -98,9 +97,7 @@ function MyProfile() {
               </div>
               <Row>
                 <Col xs={9}>
-                  <h3 className="text-capitalize">
-                    {data.name} {data.surname}
-                  </h3>
+                  <h3 className="text-capitalize">{`${data.name}  ${data.surname}`}</h3>
                   <p>{data.title}</p>
                   <span>{data.area}</span>
                   <Button

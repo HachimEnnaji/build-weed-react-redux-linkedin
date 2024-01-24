@@ -7,6 +7,21 @@ form svg {
   top: 50%;
   left: 0;
 } */
+.profile-scroll {
+  opacity: 0;
+
+  transition: all 1s ease;
+}
+
+.visible-scroll {
+  background-color: #fbfbfb;
+  opacity: 1;
+  z-index: 2000;
+  position: sticky;
+  top: 57px;
+  transform: translateY(+25px);
+  transition: all 0.6s;
+}
 
 body {
   background-color: lightgrey;
