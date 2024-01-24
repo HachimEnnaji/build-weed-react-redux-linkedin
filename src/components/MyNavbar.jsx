@@ -45,7 +45,7 @@ function MyNavbar() {
             {/* onSubmit={} */}
             {/* <FaSearch className="magnifying-icon" /> */}
           </Form>
-          <Container className="px-5">
+          <Container className="">
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
               <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
@@ -129,15 +129,21 @@ function MyNavbar() {
                   title={
                     <>
                       <>
-                        <img src={data.image} alt="profile" width={26} className="rounded-circle d-block" />
+                        <img
+                          src={data.image}
+                          alt="profile"
+                          width={26}
+                          height={26}
+                          className=" rounded-circle d-block mt-1"
+                        />
                       </>
                       <span>Tu</span>
                     </>
                   }
                   id="navbarScrollingDropdown"
                 >
-                  <NavDropdown.Item href="#action3" className="border-bottom">
-                    <Container fluid className="d-flex p-0 ">
+                  <NavDropdown.Item href="#action3" className=" mt-3">
+                    <Container fluid className="d-flex ">
                       <img
                         src={data.image}
                         alt="profile"
@@ -160,9 +166,26 @@ function MyNavbar() {
                 </NavDropdown>
 
                 <Container className="border-start ms-3 p-0 d-flex">
-                  <Button className="bg-transparent text-dark border-0 me-4 text-nowrap" onClick={handleShow}>
-                    <BiSolidGrid className="fs-3" />
-                    <br /> Per le Aziende <FaCaretDown />
+                  <Button className="bg-transparent text-dark border-0 text-nowrap" onClick={handleShow}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      data-supported-dps="24x24"
+                      fill="currentColor"
+                      class="mercado-match m-0"
+                      width="26"
+                      height="26"
+                      focusable="false"
+                    >
+                      <path d="M3 3h4v4H3zm7 4h4V3h-4zm7-4v4h4V3zM3 14h4v-4H3zm7 0h4v-4h-4zm7 0h4v-4h-4zM3 21h4v-4H3zm7 0h4v-4h-4zm7 0h4v-4h-4z"></path>
+                    </svg>
+                    {/* <BiSolidGrid className="fs-3 " height={24} width={24}/> */}
+                    <br />{" "}
+                    <div>
+                      <p className="mt-1">
+                        Per le Aziende <FaCaretDown />{" "}
+                      </p>
+                    </div>
                   </Button>
                   <Offcanvas show={show} onHide={handleClose} placement="end">
                     <Offcanvas.Header closeButton>
@@ -175,11 +198,9 @@ function MyNavbar() {
                   </Offcanvas>
 
                   <Navbar.Text>
-                    <Container fluid>
-                      <a href="#login" className="text-center fs-7">
-                        Prova premium per 0 € fffffffffffff
-                      </a>
-                    </Container>
+                    <a href="#login" className="text-center fs-7">
+                      Prova Premium <br /> per 0 €
+                    </a>
                   </Navbar.Text>
                 </Container>
               </Nav>
