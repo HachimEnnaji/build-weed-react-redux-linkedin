@@ -48,7 +48,7 @@ function HomePageDx() {
             {user.name}
             {user.surname}
           </a>
-          <a href="#" className="fs-7">
+          <a href="#" className="fs-7 text-decoration-none">
             Aggiungi una foto
           </a>
         </Card.Title>
@@ -57,7 +57,26 @@ function HomePageDx() {
         </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item>Cras justo odio</ListGroup.Item>
+        <ListGroup.Item>
+          <div className="d-flex">
+            <div className="fs-7 text-start">
+              <p className="mb-0">Cras justo odio</p>
+              <strong>Espandi la tua rete</strong>
+            </div>
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                data-supported-dps="16x16"
+                fill="currentColor"
+                className="mercado-match"
+                width="16"
+                height="16"
+                focusable="false"
+              ></svg>
+            </div>
+          </div>
+        </ListGroup.Item>
         <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
         <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
       </ListGroup>
