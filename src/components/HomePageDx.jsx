@@ -34,7 +34,18 @@ function HomePageDx() {
   }, []);
   return (
     <Card className="text-center position-relative">
-      <Card.Header style={{ height: "50px" }}>Featured</Card.Header>{" "}
+      <Card.Header
+        style={{
+          height: "50px",
+          backgroundImage:
+            'url("https://images.unsplash.com/photo-1607706189992-eae578626c86?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* Il contenuto della Card.Header */}
+      </Card.Header>
+
       <div className="pb-4">
         <img
           src={user.image}
@@ -50,11 +61,6 @@ function HomePageDx() {
             {user.name}
             {user.surname}
           </a>
-          <div>
-            <a href="#" className="fs-7 text-decoration-none">
-              Aggiungi una foto
-            </a>
-          </div>
         </Card.Title>
         <Card.Text className="fs-7">
           {user.title} presso {user.title}
