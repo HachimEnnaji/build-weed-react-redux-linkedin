@@ -158,7 +158,7 @@ function MyNavbar() {
 
                 <Navbar.Text>
                   <Container fluid>
-                    <a href="#login" className="text-center">
+                    <a href="#login" className="text-center fs-7">
                       Prova premium per 0 € fffffffffffff
                     </a>
                   </Container>

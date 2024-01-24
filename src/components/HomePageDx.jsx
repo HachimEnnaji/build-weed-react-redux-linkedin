@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { Col } from "react-bootstrap";
+import { HiUserPlus } from "react-icons/hi2";
+import { FaBookmark } from "react-icons/fa6";
 import { Card, ListGroup } from "react-bootstrap/esm";
 import { useSelector } from "react-redux";
 
@@ -48,39 +50,51 @@ function HomePageDx() {
             {user.name}
             {user.surname}
           </a>
-          <a href="#" className="fs-7 text-decoration-none">
-            Aggiungi una foto
-          </a>
+          <div>
+            <a href="#" className="fs-7 text-decoration-none">
+              Aggiungi una foto
+            </a>
+          </div>
         </Card.Title>
         <Card.Text className="fs-7">
-          {user.area} presso {user.title}
+          {user.title} presso {user.title}
         </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item>
-          <div className="d-flex">
+        <ListGroup.Item className="hoverDiv">
+          <div className="d-flex align-items-center justify-content-between ">
             <div className="fs-7 text-start">
-              <p className="mb-0">Cras justo odio</p>
+              <p className="mb-0">Collegamenti</p>
               <strong>Espandi la tua rete</strong>
             </div>
+            <HiUserPlus />
+          </div>
+        </ListGroup.Item>
+        <ListGroup.Item className="hoverDiv">
+          <div className="fs-7 text-start">
+            <p className="mb-0">Accedi a strumenti e informazioni in esclusiva</p>
             <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                data-supported-dps="16x16"
-                fill="currentColor"
-                className="mercado-match"
-                width="16"
-                height="16"
-                focusable="false"
-              ></svg>
+              <strong>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="orange"
+                  className="me-1"
+                >
+                  <rect width="24" height="24" rx="4" ry="4" />
+                </svg>
+                Prova premium per 0 EUR
+              </strong>
             </div>
           </div>
         </ListGroup.Item>
-        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+        <ListGroup.Item className="hoverDiv d-flex align-items-center fs-7">
+          <FaBookmark className="me-2" />
+          <strong>I miei elementi</strong>
+        </ListGroup.Item>
       </ListGroup>
-      <Card.Footer className="text-muted">2 days ago</Card.Footer>
     </Card>
   );
 }

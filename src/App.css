@@ -40,3 +40,8 @@ h6.hover:hover {
 .fs-7 {
   font-size: 12px;
 }
+
+.hoverDiv:hover {
+  background-color: rgb(237, 234, 234);
+  cursor: pointer;
+}
