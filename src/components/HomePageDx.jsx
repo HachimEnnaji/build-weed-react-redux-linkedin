@@ -1,34 +1,62 @@
+import { useState } from "react";
+import { useEffect } from "react";
 import { Col } from "react-bootstrap";
 import { Card, ListGroup } from "react-bootstrap/esm";
+import { useSelector } from "react-redux";
 
 function HomePageDx() {
+  const selector = useSelector((state) => state.user.profile);
+  const [user, setUser] = useState({
+    name: "",
+    surname: "",
+    email: "",
+    username: "",
+    bio: "",
+    title: "",
+    area: "",
+    image: "",
+  });
+
+  useEffect(() => {
+    setUser({
+      name: selector.name,
+      surname: selector.surname,
+      email: selector.email,
+      username: selector.username,
+      bio: selector.bio,
+      title: selector.title,
+      area: selector.area,
+      image: selector.image,
+    });
+  }, []);
   return (
-    <Card className="text-center">
-      <Card.Header style={{ height: "50px" }}>Featured</Card.Header>
-      <div className="mb-4">
+    <Card className="text-center position-relative">
+      <Card.Header style={{ height: "50px" }}>Featured</Card.Header>{" "}
+      <div className="pb-4">
         <img
-          src="https://images.unsplash.com/photo-1607706189992-eae578626c86?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src={user.image}
           alt="profile"
           width={70}
           height={70}
-          className="rounded-circle object-fit-cover ms-3"
-          style={{ position: "absolute", top: 15, left: 45 }}
+          className="rounded-circle object-fit-cover position-absolute top-25 start-50 translate-middle"
         />
       </div>
       <Card.Body>
-        <Card.Title className="fs-6">
+        <Card.Title className="fs-6 mt-2">
           <a href="#" className="h6 text-decoration-none">
-            Nome Cognome
+            {user.name}
+            {user.surname}
           </a>
         </Card.Title>
-        <Card.Text style={{ fontSize: "12px" }}>Tipo di mansione presso nome aziend</Card.Text>
+        <Card.Text style={{ fontSize: "12px" }}>
+          {user.area} presso {user.title}
+        </Card.Text>
         <ListGroup className="list-group-flush">
           <ListGroup.Item>Cras justo odio</ListGroup.Item>
           <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
           <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
         </ListGroup>
       </Card.Body>
-
       <Card.Footer className="text-muted">2 days ago</Card.Footer>
     </Card>
   );
