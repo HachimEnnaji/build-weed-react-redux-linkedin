@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import HomePageLeft from "./HomePageLeft";
 import HomePageDx from "./HomePageDx";
+import HomePageCentral from "./HomePageCentral";
 
 function HomePages() {
   return (
@@ -18,9 +19,7 @@ function HomePages() {
         </Col>
 
         <Col xs={7}>
-          <Card>
-            <Card.Body>This is some text within a card body.</Card.Body>
-          </Card>
+          <HomePageCentral />
         </Col>
 
         <Col xs={3}>
