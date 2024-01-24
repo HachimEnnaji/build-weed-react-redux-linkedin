@@ -4,17 +4,26 @@ const userSlice = createSlice({
   name: "user",
   initialState: {
     profile: {},
-    content: [],
+    profiles: [],
+    myExperience: null,
+    refreshExp: false,
   },
   reducers: {
     setSearchResult: (state, action) => {
       state.profile = action.payload;
     },
-    setProfilesResult: (state, action) => {
-      state.content = action.payload;
+    setAllProfilesResult: (state, action) => {
+      state.profiles = action.payload;
+    },
+    setMyExperience: (state, action) => {
+      state.myExperience = action.payload;
+    },
+    refreshExperience: (state) => {
+      state.refreshExp = !state.refreshExp;
     },
   },
 });
 
-export const { setSearchResult, setProfilesResult } = userSlice.actions;
+export const { setSearchResult, setProfilesResult, setAllProfilesResult, setMyExperience, refreshExperience } =
+  userSlice.actions;
 export const userReducer = userSlice.reducer;

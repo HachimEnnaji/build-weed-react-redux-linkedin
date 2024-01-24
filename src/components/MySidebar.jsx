@@ -6,26 +6,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchSearch } from "../redux/actions/fecthData";
 
 function MySidebar() {
-  const profileObj = useSelector((state) => state.user.content);
+  const profileObj = useSelector((state) => state.user.profiles);
   const dispatch = useDispatch();
   const [visibleProfiles, setVisibleProfiles] = useState(5);
 
-  const handleFetchProfiles = async () => {
-    try {
-      await dispatch(fetchSearch("?"));
-      //   setProfiles(profileObj);
-      //   console.log(profileObj);
-    } catch (error) {
-      console.error("Errore durante la fetch:", error.message);
-    }
-  };
   const handleMore = () => {
     setVisibleProfiles(visibleProfiles + 5);
   };
 
   useEffect(() => {
-    handleFetchProfiles();
-  }, [dispatch]);
+    dispatch(fetchSearch(""));
+  }, []);
 
   return (
     <Col xs={3}>

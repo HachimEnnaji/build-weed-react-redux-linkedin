@@ -1,4 +1,4 @@
-import { setProfilesResult, setSearchResult } from "../reducers/userSlice";
+import { setProfilesResult, setSearchResult, setAllProfilesResult } from "../reducers/userSlice";
 
 export const fetchSearch = (query) => async (dispatch) => {
   const token =
@@ -17,14 +17,14 @@ export const fetchSearch = (query) => async (dispatch) => {
       if (query === "me") {
         dispatch(setSearchResult(data));
       } else {
-        dispatch(setProfilesResult(data));
+        dispatch(setAllProfilesResult(data));
       }
     } else {
       if (query === "me") {
         dispatch(setSearchResult(null));
         throw new Error("Errore nel recupero del profilo personale");
       } else {
-        dispatch(setProfilesResult([]));
+        dispatch(setAllProfilesResult([]));
         throw new Error("Errore nel recupero dei profili");
       }
     }

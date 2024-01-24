@@ -15,11 +15,13 @@ function MyMain() {
   return (
     <Container>
       <Row>
-        <MyProfile />
-        <Col xs={3}>
-          {" "}
-          <MySidebar />{" "}
-        </Col>{" "}
+        <Col xs={8}>
+          <MyProfile />
+        </Col>
+
+        <Col xs={4}>
+          <MySidebar />
+        </Col>
         {/* Questa sezione deve sparire quando la pagina non è lg */}
       </Row>
     </Container>
