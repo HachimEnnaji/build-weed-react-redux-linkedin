@@ -17,7 +17,7 @@ function MyNavbar() {
   useEffect(() => {
     const handleScroll = () => {
       // Sostituisci 200 con la soglia di scroll desiderata
-      setIsVisible(window.scrollY > 200);
+      setIsVisible(window.scrollY > 500);
     };
 
     // Aggiungi un listener per l'evento di scroll
@@ -208,10 +208,16 @@ function MyNavbar() {
           </Container>
         </Container>
       </Navbar>
-      <Container fluid className={` ${isVisible ? "visible-scroll" : "profile-scroll"} bg-light shadow-lg py-1`}>
+      <Container fluid className={` ${isVisible ? "visible-scroll" : "profile-scroll"} bg-light shadow-lg p-0`}>
         <Container fluid>
           <Container className="d-flex">
-            <img src={data.image} alt="profile" height={45} width={45} className="rounded-pill position-relative" />
+            <img
+              src={data.image}
+              alt="profile"
+              height={45}
+              width={45}
+              className="rounded-pill position-relative object-fit-cover"
+            />
             {/* <Badge bg="success p-2 rounded-pill position-absolute bottom-0 end-0"> </Badge> */}
             <Container>
               <h5>

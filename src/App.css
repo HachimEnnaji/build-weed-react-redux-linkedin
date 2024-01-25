@@ -7,6 +7,10 @@ form svg {
   top: 50%;
   left: 0;
 } */
+
+body {
+  background-color: lightgrey;
+}
 .profile-scroll {
   opacity: 0;
 
@@ -18,15 +22,29 @@ form svg {
   opacity: 1;
   z-index: 2000;
   position: sticky;
-  top: 57px;
-  transform: translateY(+25px);
-  transition: all 0.6s;
+  top: 52px;
+  transform: translateY(+30px);
+  transition: all 0.7s;
 }
-
-body {
-  background-color: lightgrey;
+div svg.hover-icon:hover,
+div svg.trash-icon:hover {
+  background-color: #eeeeee;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: scale(1.25);
+  transition: transform 500ms ease, background-color 500ms ease;
 }
-
+div svg.trash-icon:hover {
+  color: crimson;
+}
+div.hover-color:hover {
+  background-color: #f5f2f2;
+  cursor: pointer;
+  border-radius: 30px;
+  padding-inline-end: 3px;
+  transform: scale(1.08);
+  transition: transform 200ms, background-color 300ms;
+}
 .navPlaceholder {
   width: 300px;
 }
@@ -77,4 +95,8 @@ h6.hover:hover {
 
 .search-icon {
   margin-right: 10px;
+}
+
+div button.disabled-post {
+  cursor: not-allowed !important;
 }

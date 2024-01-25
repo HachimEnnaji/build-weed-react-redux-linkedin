@@ -11,8 +11,8 @@ function App() {
       <BrowserRouter>
         <MyNavbar />
         <Routes>
-          <Route path="/" element={<MyMain />}></Route>
-          {/* <Route path="/" element={<HomePages />}></Route> */}
+          <Route path="/main" element={<MyMain />}></Route>
+          <Route path="/" element={<HomePages />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

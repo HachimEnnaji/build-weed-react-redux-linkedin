@@ -68,7 +68,7 @@ function MyProfile() {
     <>
       <Row className="w-100 ">
         <Col>
-          <Card className="my-3">
+          <Card className="mb-3 mt-0">
             <Card.Img
               variant="top"
               src="https://images.unsplash.com/photo-1607706189992-eae578626c86?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -90,7 +90,7 @@ function MyProfile() {
                 </div>
                 <div>
                   <Button className="bg-transparent text-dark rounded-circle border-0" onClick={handleShowEdit}>
-                    <FaPencilAlt />
+                    <FaPencilAlt className="my-3 hover-icon" size={20} />
                   </Button>
                   <MyEditedProfile show={showForm} handleClose={handleCloseEdit} data={data} />
                 </div>
@@ -117,7 +117,7 @@ function MyProfile() {
 
                     <Modal.Body>
                       <Container fluid className="d-flex justify-content-between">
-                        <p> Informazioni di contatto</p> <FaPencilAlt />
+                        <p> Informazioni di contatto</p> <FaPencilAlt className="my-3 hover-icon" size={20} />
                       </Container>
                     </Modal.Body>
                     <Container className="d-flex pb-3">
@@ -186,7 +186,7 @@ function MyProfile() {
                     <h3 className=" h5">Esperienza</h3>
                     {/* <i className=" icon-post bi bi-plus-lg fs-4" onClick={handleExperiencePostModal}></i> */}
                     {/* <FaPencilAlt  onClick={handleExperiencePostModal}/> */}
-                    <FiPlus onClick={handleExperiencePostModal} />
+                    <FiPlus onClick={handleExperiencePostModal} size={20} className="hover-icon" />
                   </div>
                 </Col>
               </Row>
@@ -202,24 +202,35 @@ function MyProfile() {
                               src="https://cdn.icon-icons.com/icons2/1377/PNG/512/imagexgeneric_92742.png"
                               alt=""
                               className=" fix-h-60"
-                              style={{ heigth: "30px", width: "30px" }}
+                              height={40}
+                              width={40}
                             />
                             {/* <i
                               className="icon-edit bi bi-pencil-square text-gray fs-5 mt-1"
                               onClick={() => handleExperienceModal(exp)}
                             ></i> */}
-                            <FaPencilAlt onClick={() => handleExperienceModal(exp)} />
+                            <Container className="d-flex flex-column">
+                              <FaPencilAlt
+                                onClick={() => handleExperienceModal(exp)}
+                                className="my-3 hover-icon"
+                                size={20}
+                              />
 
-                            {/* <i
+                              {/* <i
                               className="icon-delete bi bi-x-square text-gray fs-5"
                               onClick={() => handleExperienceDeleteModal(exp)}
                             ></i> */}
 
-                            <FiTrash2 onClick={() => handleExperienceDeleteModal(exp)} />
+                              <FiTrash2
+                                onClick={() => handleExperienceDeleteModal(exp)}
+                                size={20}
+                                className="trash-icon"
+                              />
+                            </Container>
                           </div>
                         </Col>
                         <Col className="ps-0 pe-2">
-                          <p className="fw-semibold pt-2 mb-0">{exp.role}</p>
+                          <p className="fw-semibold ">{exp.role}</p>
                           <p className="small mb-0">{exp.company}</p>
                           <p className="text-gray small mb-0">
                             {new Date(exp.startDate).getFullYear() +

@@ -21,7 +21,7 @@ function MySidebar() {
   return (
     <Col xs={3}>
       <Col>
-        <Card className="my-3" style={{ width: "18rem" }}>
+        <Card className="mb-3 mt-0" style={{ width: "18rem" }}>
           <Card.Body className="p-2">
             <Card.Header className="bg-transparent d-flex justify-content-between">
               <div>
