@@ -4,8 +4,7 @@ import MyNavbar from "./components/MyNavbar";
 import MyMain from "./components/MyMain";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePages from "./components/HomePages";
-import WorkPages from "./components/HomePages";
-import HomePageModalArticle from "./components/HomePageModalThree";
+import WorkPage from "./components/WorkPage";
 
 function App() {
   return (
@@ -15,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/main" element={<MyMain />}></Route>
           <Route path="/" element={<HomePages />}></Route>
-          <Route path="/" element={<WorkPages />}></Route>
+          <Route path="/query" element={<WorkPage />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

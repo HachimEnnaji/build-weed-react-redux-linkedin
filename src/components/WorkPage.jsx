@@ -5,7 +5,7 @@ import WorkPageLeft from "./WorkPageLeft";
 import WorkPageDx from "./WorkPageDx";
 import WorkPageCentral from "./WorkPageCentral";
 
-function HomePages() {
+function WorkPage() {
   return (
     <Container className="d-flex justify-content-center mt-3">
       <Row>
@@ -25,4 +25,4 @@ function HomePages() {
   );
 }
 
-export default HomePages;
+export default WorkPage;
