@@ -8,10 +8,11 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 
-import HomePageFooter from "../components/HomePageFooter"
+import HomePageFooter from "../components/HomePageFooter";
 
 import { BiSolidInfoSquare } from "react-icons/bi";
 import { TbPointFilled } from "react-icons/tb";
+import Articles from "./Articles";
 
 function HomePageLeft() {
   return (
@@ -19,12 +20,10 @@ function HomePageLeft() {
       <Col>
         <Card className="m-0" style={{ width: "18rem" }}>
           <Card.Header className=" d-flex justify-content-between bg-transparent border-0 ">
-            <Card.Title className="h5 font-weight-bold d-flex align-items-end m-0">
-              Linkedin Notizie
-            </Card.Title>
+            <Card.Title className="h5 font-weight-bold d-flex align-items-end m-0">Linkedin Notizie</Card.Title>
             <BiSolidInfoSquare />
           </Card.Header>
-          <Card.Body>
+          {/* <Card.Body>
             <Container>
               <Row>
                 <Col>
@@ -45,14 +44,12 @@ function HomePageLeft() {
                 </Col>
               </Row>
             </Container>
-          </Card.Body>
-
+          </Card.Body> */}
+          {/* REFACTOR ARTICLES COMPONENT */}
+          <Articles />
           <Card.Footer className="bg-transparent border-0 m-0">
             <div className=" d-flex justify-content-center">
-              <Button
-                className=" border-0 bg-transparent text-secondary p-0"
-                size="sm"
-              >
+              <Button className=" border-0 bg-transparent text-secondary p-0" size="sm">
                 Mostra altro
               </Button>{" "}
             </div>
@@ -61,18 +58,11 @@ function HomePageLeft() {
       </Col>
 
       <Card className="my-2">
-        <Image
-          src="https://placehold.jp/150x150.png"
-          rounded
-          className="border border-warning"
-        />
+        <Image src="https://placehold.jp/150x150.png" rounded className="border border-warning" />
       </Card>
-          <Col>
-          <HomePageFooter></HomePageFooter>
-          </Col>
-
-
-
+      <Col>
+        <HomePageFooter></HomePageFooter>
+      </Col>
     </Container>
   );
 }

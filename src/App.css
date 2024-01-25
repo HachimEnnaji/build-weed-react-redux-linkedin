@@ -16,7 +16,13 @@ body {
 
   transition: all 1s ease;
 }
-
+ul li.list-articles:hover {
+  background-color: #fcf9f9;
+  cursor: pointer;
+  border-radius: 15px;
+  padding-block: 2px;
+  transition: all 300ms;
+}
 .visible-scroll {
   background-color: #fbfbfb;
   opacity: 1;

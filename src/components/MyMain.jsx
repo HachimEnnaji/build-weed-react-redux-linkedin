@@ -13,7 +13,7 @@ function MyMain() {
   }, []);
 
   return (
-    <Container className="p-0 m-0">
+    <Container>
       <Row>
         <Col xs={8}>
           <MyProfile />
