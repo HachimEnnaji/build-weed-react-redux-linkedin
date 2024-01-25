@@ -13,7 +13,7 @@ function WorkPage() {
           <WorkPageDx />
         </Col>
 
-        <Col xs={7}>
+        <Col xs={6}>
           <WorkPageCentral />
         </Col>
 
