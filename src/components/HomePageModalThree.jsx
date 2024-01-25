@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { RiArticleLine } from "react-icons/ri";
-import { FaItalic, FaList, FaListOl } from "react-icons/fa";
+import { FaItalic, FaList, FaListOl, FaArrowRight } from "react-icons/fa";
 import { FaBold, FaLink } from "react-icons/fa6";
 import { ImQuotesRight } from "react-icons/im";
 import { PiBracketsCurlyLight } from "react-icons/pi";
 import { GoDash } from "react-icons/go";
 import { IoCodeSlash } from "react-icons/io5";
+import { HiOutlinePhoto } from "react-icons/hi2";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Container, Dropdown, DropdownButton } from "react-bootstrap";
@@ -58,15 +59,64 @@ function HomePageModalThree() {
                       <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
-                  <FaBold />
-                  <FaItalic />
-                  <FaList />
-                  <FaListOl />
-                  <ImQuotesRight />
-                  <PiBracketsCurlyLight />
-                  <GoDash />
-                  <FaLink />
-                  <IoCodeSlash />
+                  <div className="me-4">
+                    <Button className="bg-light text-secondary border-0 hoverDiv p-1 fs-5">
+                      <FaBold className="mb-1" />
+                    </Button>
+                    <Button className="bg-light text-secondary border-0 hoverDiv p-1 fs-5">
+                      <FaItalic className="mb-1" />
+                    </Button>
+                  </div>
+                  <div className="me-4">
+                    <Button className="bg-light text-secondary border-0 hoverDiv p-1 fs-5">
+                      <FaList className="mb-1" />
+                    </Button>
+                    <Button className="bg-light text-secondary border-0 hoverDiv p-1 fs-5">
+                      <FaListOl className="mb-1" />
+                    </Button>
+                  </div>
+                  <div className="me-4">
+                    <Button className="bg-light text-secondary border-0 hoverDiv p-1 fs-5">
+                      <ImQuotesRight className="mb-1" />
+                    </Button>
+                    <Button className="bg-light text-secondary border-0 hoverDiv p-1 fs-5">
+                      <PiBracketsCurlyLight className="mb-1" />
+                    </Button>
+                    <Button className="bg-light text-secondary border-0 hoverDiv p-1 fs-5">
+                      <GoDash className="mb-1" />
+                    </Button>
+                  </div>
+                  <div className="me-4">
+                    <Button className="bg-light text-secondary border-0 hoverDiv p-1 fs-5">
+                      <FaLink className="mb-1" />
+                    </Button>
+                    <Button className="bg-light text-secondary border-0 hoverDiv p-1 fs-5">
+                      <IoCodeSlash className="mb-1" />
+                    </Button>
+                  </div>
+                  <Button className="bg-light text-secondary border-0 hoverDiv p-1 fs-5">
+                    <HiOutlinePhoto className="mb-1" />
+                  </Button>
+                </div>
+                <div className="d-flex align-items-center">
+                  {/* <Button variant="light" className="me-2 rounded-pill border border-2 border-primary text-primary">GE</Button> */}
+                  <Dropdown>
+                    <Dropdown.Toggle
+                      className="bg-white hoverDiv me-2 rounded-pill border border-2 border-primary text-primary"
+                      id="dropdown-basic"
+                    >
+                      Gestisci
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                      <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                      <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Button variant="primary" className="rounded-pill">
+                    Avanti <FaArrowRight className="ms-1 mb-1" />
+                  </Button>
                 </div>
               </div>
             </Modal.Title>
