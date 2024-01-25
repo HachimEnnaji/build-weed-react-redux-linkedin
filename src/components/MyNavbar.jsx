@@ -33,7 +33,7 @@ function MyNavbar() {
 
   return (
     <>
-      <Navbar expand="lg" className="bg-white" sticky="top">
+      <Navbar expand="lg" className="bg-white py-0" sticky="top">
         <Container>
           <img src={logo} alt="logo-linkedin" style={{ height: "35px" }} />
           <Form className="d-flex">
@@ -47,11 +47,11 @@ function MyNavbar() {
             {/* onSubmit={} */}
             {/* <FaSearch className="magnifying-icon" /> */}
           </Form>
-          <Container className="">
+          <Container>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
               <Nav className="me-auto my-2 my-lg-0" navbarScroll>
-                <NavLink to={"/"} href="#action1" className="me-3 p-0 text-center nav-link text-dark">
+                <NavLink to={"/"} href="#action1" className="me-3  text-center nav-link text-dark">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -66,7 +66,7 @@ function MyNavbar() {
                   </svg>
                   Home
                 </NavLink>
-                <Nav.Link href="#action2" className="me-3 p-0 text-center">
+                <Nav.Link href="#action2" className="me-3  text-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -81,7 +81,7 @@ function MyNavbar() {
                   </svg>
                   Rete
                 </Nav.Link>
-                <Nav.Link href="#action2" className="me-3 p-0 text-center">
+                <Nav.Link href="#action2" className="me-3  text-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -96,7 +96,7 @@ function MyNavbar() {
                   </svg>
                   Lavoro
                 </Nav.Link>
-                <Nav.Link href="#action2" className="me-3 p-0 text-center">
+                <Nav.Link href="#action2" className="me-3  text-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -111,7 +111,7 @@ function MyNavbar() {
                   </svg>
                   Messaggistica
                 </Nav.Link>
-                <Nav.Link href="#action2" className="me-3 p-0 text-center">
+                <Nav.Link href="#action2" className="me-3  text-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -137,7 +137,7 @@ function MyNavbar() {
                             alt="profile"
                             width={26}
                             height={26}
-                            className=" rounded-circle d-block mt-1"
+                            className=" rounded-circle d-block mt-1 "
                           />
                         ) : (
                           <Spinner animation="border" role="status">
@@ -159,11 +159,12 @@ function MyNavbar() {
                             src={data.image}
                             alt="profile"
                             width={50}
-                            className="rounded-circle d-block align-self-start mt-1"
+                            height={50}
+                            className="rounded-circle d-block object-fit-cover"
                           />
                           <Container fluid className="text-dark">
                             <Link to="/main">
-                              <p className="text-capitalize my-1 text-dark">
+                              <p className="text-capitalize mb-1 text-dark">
                                 {data.name} {data.surname}
                               </p>
                             </Link>
@@ -189,7 +190,7 @@ function MyNavbar() {
                       viewBox="0 0 24 24"
                       data-supported-dps="24x24"
                       fill="currentColor"
-                      class="mercado-match m-0"
+                      className="mercado-match m-0"
                       width="26"
                       height="26"
                       focusable="false"
@@ -215,8 +216,8 @@ function MyNavbar() {
                   </Offcanvas>
 
                   <Navbar.Text>
-                    <a href="#login" className="text-center">
-                      Prova Premium <br /> per 0 €
+                    <a href="#login" className="text-center premium-gold fs-6">
+                      Prova Premium per 0 €
                     </a>
                   </Navbar.Text>
                 </Container>

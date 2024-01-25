@@ -51,9 +51,13 @@ div.hover-color:hover {
   transform: scale(1.08);
   transition: transform 200ms, background-color 300ms;
 }
+a.premium-gold {
+  color: #bb7309;
+  font-weight: 300;
+  text-wrap: nowrap;
+}
 .navPlaceholder {
   width: 300px;
-  margin-bottom: 15px;
 }
 div img.img-contain {
   object-fit: contain;
