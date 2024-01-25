@@ -33,7 +33,7 @@ function MyNavbar() {
     <>
       <Navbar expand="lg" className="bg-white" sticky="top">
         <Container>
-          <img src={logo} alt="logo-linkedin" style={{ height: "35px" }} />
+          <img src={logo} alt="logo-linkedin" style={{ height: "35px" }} className="mb-2" />
           <Form className="d-flex">
             <Form.Control
               type="search"
@@ -198,7 +198,7 @@ function MyNavbar() {
                   </Offcanvas>
 
                   <Navbar.Text>
-                    <a href="#login" className="text-center fs-7">
+                    <a href="#login" className="text-center">
                       Prova Premium <br /> per 0 €
                     </a>
                   </Navbar.Text>
