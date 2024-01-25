@@ -9,6 +9,7 @@ import { fetchSearch } from "../redux/actions/fecthData";
 function HomePageDx() {
   const endpoint = "profile";
   const selector = useSelector((state) => state.user.profile);
+  const dispatch = useDispatch();
   const [user, setUser] = useState({
     name: "",
     surname: "",
