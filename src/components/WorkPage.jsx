@@ -1,8 +1,6 @@
 import React from "react";
 /* IMPORTA COMPONENTI */
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { Col, Container, Row } from "react-bootstrap";
 import WorkPageLeft from "./WorkPageLeft";
 import WorkPageDx from "./WorkPageDx";
 import WorkPageCentral from "./WorkPageCentral";
