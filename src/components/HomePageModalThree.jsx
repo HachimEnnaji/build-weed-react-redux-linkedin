@@ -12,6 +12,7 @@ import Modal from "react-bootstrap/Modal";
 import { Col, Container, Dropdown, DropdownButton, Row } from "react-bootstrap";
 import FormSave from "./FormSave";
 import { useDispatch, useSelector } from "react-redux";
+import { fetchSearch } from "../redux/actions/fecthData";
 
 function HomePageModalThree() {
   const data = useSelector((state) => state.user.profile);
@@ -45,7 +46,7 @@ function HomePageModalThree() {
               <div className="d-flex justify-content-between align-items-center">
                 <div className="d-flex align-items-center">
                   <img
-                    src="https://images.unsplash.com/photo-1607706189992-eae578626c86?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src={data.image}
                     alt="profile"
                     width={50}
                     height={50}
@@ -54,7 +55,7 @@ function HomePageModalThree() {
                   <div>
                     {data ? (
                       <h6 className="mb-1">
-                        {data.name}
+                        {data.name}&nbsp;
                         {data.surname}
                       </h6>
                     ) : (

@@ -4,33 +4,36 @@ import { Col } from "react-bootstrap";
 import { HiUserPlus } from "react-icons/hi2";
 import { FaBookmark } from "react-icons/fa6";
 import { Card, ListGroup } from "react-bootstrap/esm";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchSearch } from "../redux/actions/fecthData";
 
 function HomePageDx() {
   const endpoint = "profile";
-  const selector = useSelector((state) => state.user.profile);
-  const [user, setUser] = useState({
-    name: "",
-    surname: "",
-    email: "",
-    username: "",
-    bio: "",
-    title: "",
-    area: "",
-    image: "",
-  });
+  const user = useSelector((state) => state.user.profile);
+  const dispatch = useDispatch();
+  // const [user, setUser] = useState({
+  //   name: "",
+  //   surname: "",
+  //   email: "",
+  //   username: "",
+  //   bio: "",
+  //   title: "",
+  //   area: "",
+  //   image: "",
+  // });
 
   useEffect(() => {
-    setUser({
-      name: selector.name,
-      surname: selector.surname,
-      email: selector.email,
-      username: selector.username,
-      bio: selector.bio,
-      title: selector.title,
-      area: selector.area,
-      image: selector.image,
-    });
+    dispatch(fetchSearch("me"));
+    // setUser({
+    //   name: selector.name,
+    //   surname: selector.surname,
+    //   email: selector.email,
+    //   username: selector.username,
+    //   bio: selector.bio,
+    //   title: selector.title,
+    //   area: selector.area,
+    //   image: selector.image,
+    // });
   }, []);
   return (
     <Card className="text-center position-relative">
@@ -58,7 +61,7 @@ function HomePageDx() {
       <Card.Body>
         <Card.Title className="fs-6 mt-2">
           <a href={endpoint} className="h6 text-decoration-none">
-            {user.name}
+            {user.name}&nbsp;
             {user.surname}
           </a>
         </Card.Title>

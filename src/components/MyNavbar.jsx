@@ -48,8 +48,8 @@ function MyNavbar() {
           <Container className="">
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
-              <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
-                <NavLink to={"/"} href="#action1" className="me-3 text-center nav-link text-dark">
+              <Nav className="me-auto my-2 my-lg-0" navbarScroll>
+                <NavLink to={"/"} href="#action1" className="me-3 p-0 text-center nav-link text-dark">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -64,7 +64,7 @@ function MyNavbar() {
                   </svg>
                   Home
                 </NavLink>
-                <Nav.Link href="#action2" className="me-3 text-center">
+                <Nav.Link href="#action2" className="me-3 p-0 text-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -79,7 +79,7 @@ function MyNavbar() {
                   </svg>
                   Rete
                 </Nav.Link>
-                <Nav.Link href="#action2" className="me-3 text-center">
+                <Nav.Link href="#action2" className="me-3 p-0 text-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -94,7 +94,7 @@ function MyNavbar() {
                   </svg>
                   Lavoro
                 </Nav.Link>
-                <Nav.Link href="#action2" className="me-3 text-center">
+                <Nav.Link href="#action2" className="me-3 p-0 text-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -109,7 +109,7 @@ function MyNavbar() {
                   </svg>
                   Messaggistica
                 </Nav.Link>
-                <Nav.Link href="#action2" className="me-3 text-center">
+                <Nav.Link href="#action2" className="me-3 p-0 text-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
