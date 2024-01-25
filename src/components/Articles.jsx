@@ -17,14 +17,12 @@ function Articles() {
       <ul>
         {articles.results &&
           articles.results.map((article) => (
-            <>
-              <li className="fs-6 list-articles" key={article.id}>
-                {article.title}
-                <a href={article.url} target="_blank" rel="noopener noreferrer" className="link-hover">
-                  <p className="lead">{article.news_site}</p>
-                </a>
-              </li>
-            </>
+            <li className="fs-6 list-articles" key={article.id}>
+              {article.title}
+              <a href={article.url} target="_blank" rel="noopener noreferrer" className="link-hover">
+                <p className="lead">{article.news_site}</p>
+              </a>
+            </li>
           ))}
       </ul>
     </Container>
