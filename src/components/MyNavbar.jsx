@@ -33,7 +33,7 @@ function MyNavbar() {
     <>
       <Navbar expand="lg" className="bg-white" sticky="top">
         <Container>
-          <img src={logo} alt="logo-linkedin" style={{ height: "35px" }} className="mb-2" />
+          <img src={logo} alt="logo-linkedin" style={{ height: "35px" }} />
           <Form className="d-flex">
             <Form.Control
               type="search"
