@@ -14,7 +14,7 @@ function HomePageModalTwo() {
   return (
     <>
       <Button className="bg-white text-secondary border-0 hoverDiv" onClick={handleShow}>
-        <MdOutlineCalendarMonth className="mb-1 text-danger me-1" style={{ width: "24px", height: "24px" }} />
+        <MdOutlineCalendarMonth className="mb-1 text-warning me-1" style={{ width: "24px", height: "24px" }} />
         Calendar
       </Button>
 
@@ -24,11 +24,7 @@ function HomePageModalTwo() {
         </Modal.Header>
         <Modal.Body>
           <div className="text-center pb-5 pt-3 hoverDiv">
-            <img
-              src="https://img.freepik.com/premium-vector/camera-point-vector-logo-design-illustration-photo-spot-logo-designs-concept-vector-illustration_617472-588.jpg"
-              alt="camera"
-              width={100}
-            />
+            <img src="https://img.lovepik.com/element/45007/5929.png_860.png" alt="camera" width={100} />
             <h6>Carica l'immagine di copertina</h6>
             <p>Larghezza minima 480 pixel, rapporto consigliato 16:9</p>
           </div>

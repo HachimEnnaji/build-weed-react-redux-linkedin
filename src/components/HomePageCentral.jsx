@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Card, Col, Image, Row } from "react-bootstrap";
+import { Button, Card, Col, Image, Row } from "react-bootstrap";
 import HomePageModalOne from "./HomePageModalOne";
 import HomePageModalTwo from "./HomePageModalTwo";
 import HomePageModalZero from "./HomePageModalZero";
@@ -9,6 +9,7 @@ import { AiOutlineLike } from "react-icons/ai";
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
 import { TfiCommentAlt } from "react-icons/tfi";
 import { IoIosSend } from "react-icons/io";
+import { RiArticleLine } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
 import HomeDeleteModal from "./HomeDeleteModal";
 import { Link } from "react-router-dom";
@@ -69,12 +70,19 @@ function HomePageCentral() {
       <Card>
         <Card.Body>
           <HomePageModalZero />
-          <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center justify-content-between">
             {selectedPostData && (
               <HomeDeleteModal postData={selectedPostData} show={showHomeDeleteModal} handleClose={handleClose} />
             )}
             <HomePageModalOne />
             <HomePageModalTwo />
+            <a href="#">
+              {" "}
+              <Button className="bg-white text-secondary border-0 hoverDiv">
+                <RiArticleLine className="mb-1 text-danger me-1" style={{ width: "24px", height: "24px" }} />
+                Scrivi un articolo
+              </Button>
+            </a>
           </div>
         </Card.Body>
       </Card>
