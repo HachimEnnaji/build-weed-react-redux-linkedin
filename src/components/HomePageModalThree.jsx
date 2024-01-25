@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { RiArticleLine } from "react-icons/ri";
 import { FaItalic, FaList, FaListOl, FaArrowRight, FaPencilAlt } from "react-icons/fa";
 import { FaBold, FaLink, FaArrowUpFromBracket } from "react-icons/fa6";
@@ -10,11 +10,20 @@ import { HiOutlinePhoto } from "react-icons/hi2";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Col, Container, Dropdown, DropdownButton, Row } from "react-bootstrap";
+import FormSave from "./FormSave";
+import { useDispatch, useSelector } from "react-redux";
 
 function HomePageModalThree() {
+  const data = useSelector((state) => state.user.profile);
+  const dispatch = useDispatch();
+
   const values = [true];
   const [fullscreen, setFullscreen] = useState(true);
   const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    dispatch(fetchSearch("me"));
+  }, []);
 
   function handleShow(breakpoint) {
     setFullscreen(breakpoint);
@@ -43,7 +52,14 @@ function HomePageModalThree() {
                     className="rounded-circle object-fit-cover me-2"
                   />
                   <div>
-                    <h6 className="mb-1">Nome Cognome</h6>
+                    {data ? (
+                      <h6 className="mb-1">
+                        {data.name}
+                        {data.surname}
+                      </h6>
+                    ) : (
+                      <h6 className="mb-1">User#0022</h6>
+                    )}
                     <p className="fs-7 m-0">Singolo articolo</p>
                   </div>
                 </div>
@@ -137,6 +153,7 @@ function HomePageModalThree() {
                 </Button>
               </div>
               <p className="h1">Qualifica</p>
+              <FormSave />
             </Col>
             <Col xs={3}></Col>
           </Row>
