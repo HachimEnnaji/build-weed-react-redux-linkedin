@@ -33,7 +33,7 @@ function HomePageCentral() {
   const [fetchTimer, setFetchTimer] = useState(null);
 
   useEffect(() => {
-    dispatch(fetchSearch());
+    dispatch(fetchSearch("me"));
 
     setFetchTimer(
       setInterval(() => {
