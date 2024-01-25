@@ -5,6 +5,7 @@ import { FaBold, FaLink } from "react-icons/fa6";
 import { ImQuotesRight } from "react-icons/im";
 import { PiBracketsCurlyLight } from "react-icons/pi";
 import { GoDash } from "react-icons/go";
+import { IoCodeSlash } from "react-icons/io5";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Container, Dropdown, DropdownButton } from "react-bootstrap";
@@ -65,6 +66,7 @@ function HomePageModalThree() {
                   <PiBracketsCurlyLight />
                   <GoDash />
                   <FaLink />
+                  <IoCodeSlash />
                 </div>
               </div>
             </Modal.Title>
