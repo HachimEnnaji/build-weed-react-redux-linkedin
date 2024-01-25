@@ -82,7 +82,7 @@ function HomePageCentral() {
         </Card.Body>
       </Card>
       <Col className="d-flex flex-column align-items-center">
-        {allPost && (
+        {allPost && allPost.length > 0 ? (
           <Row className="mt-3">
             {allPost.slice(0, 20).map((post) => (
               <Col xs={12} className=" mb-3" key={post._id}>
@@ -173,6 +173,8 @@ function HomePageCentral() {
               </Col>
             ))}
           </Row>
+        ) : (
+          <p>Nessun post disponibile</p>
         )}
       </Col>
     </>

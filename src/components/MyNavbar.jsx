@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import logo from "../LinkedIn_icon.svg.png";
-import { Badge, Button, Card, Container, Form, Nav, NavDropdown, NavItem, Navbar, Offcanvas } from "react-bootstrap";
-import { FaCaretDown, FaUserCircle } from "react-icons/fa";
-import { BiSolidGrid } from "react-icons/bi";
-import { useSelector } from "react-redux";
+import { Button, Container, Form, Nav, NavDropdown, Navbar, Offcanvas, Spinner } from "react-bootstrap";
+import { FaCaretDown } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
+import { fetchSearch } from "../redux/actions/fecthData";
 
 function MyNavbar() {
-  const data = useSelector((state) => state.user.profile);
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -15,6 +15,7 @@ function MyNavbar() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    dispatch(fetchSearch("me"));
     const handleScroll = () => {
       // Sostituisci 200 con la soglia di scroll desiderata
       setIsVisible(window.scrollY > 500);
@@ -28,6 +29,7 @@ function MyNavbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const data = useSelector((state) => state.user.profile);
 
   return (
     <>
@@ -129,13 +131,19 @@ function MyNavbar() {
                   title={
                     <>
                       <>
-                        <img
-                          src={data.image}
-                          alt="profile"
-                          width={26}
-                          height={26}
-                          className=" rounded-circle d-block mt-1"
-                        />
+                        {data ? (
+                          <img
+                            src={data.image}
+                            alt="profile"
+                            width={26}
+                            height={26}
+                            className=" rounded-circle d-block mt-1"
+                          />
+                        ) : (
+                          <Spinner animation="border" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                          </Spinner>
+                        )}
                       </>
                       <span>Tu</span>
                     </>
@@ -144,20 +152,29 @@ function MyNavbar() {
                 >
                   <NavDropdown.Item href="#action3" className=" mt-3">
                     <Container fluid className="d-flex ">
-                      <img
-                        src={data.image}
-                        alt="profile"
-                        width={50}
-                        className="rounded-circle d-block align-self-start mt-1"
-                      />
-                      <Container fluid className="text-dark">
-                        <Link to="/main">
-                          <p className="text-capitalize my-1 text-dark">
-                            {data.name} {data.surname}
-                          </p>
-                        </Link>
-                        <p className="text-capitalize mb-2">{data.title ? data.title : ""}</p>
-                      </Container>
+                      {data ? (
+                        <>
+                          {" "}
+                          <img
+                            src={data.image}
+                            alt="profile"
+                            width={50}
+                            className="rounded-circle d-block align-self-start mt-1"
+                          />
+                          <Container fluid className="text-dark">
+                            <Link to="/main">
+                              <p className="text-capitalize my-1 text-dark">
+                                {data.name} {data.surname}
+                              </p>
+                            </Link>
+                            <p className="text-capitalize mb-2">{data.title ? data.title : ""}</p>
+                          </Container>
+                        </>
+                      ) : (
+                        <Spinner animation="border" role="status">
+                          <span className="visually-hidden">Loading...</span>
+                        </Spinner>
+                      )}
                     </Container>
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
@@ -211,20 +228,32 @@ function MyNavbar() {
       <Container fluid className={` ${isVisible ? "visible-scroll" : "profile-scroll"} bg-light shadow-lg p-0`}>
         <Container fluid>
           <Container className="d-flex">
-            <img
-              src={data.image}
-              alt="profile"
-              height={45}
-              width={45}
-              className="rounded-pill position-relative object-fit-cover"
-            />
+            {data ? (
+              <img
+                src={data.image}
+                alt="profile"
+                height={45}
+                width={45}
+                className="rounded-pill position-relative object-fit-cover"
+              />
+            ) : (
+              <Spinner animation="border" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </Spinner>
+            )}
             {/* <Badge bg="success p-2 rounded-pill position-absolute bottom-0 end-0"> </Badge> */}
-            <Container>
-              <h5>
-                {data.name} {data.surname}
-              </h5>
-              <h5 className="mb-0 fw-light"> {data.title} </h5>
-            </Container>
+            {data ? (
+              <Container>
+                <h5>
+                  {data.name} {data.surname}
+                </h5>
+                <h5 className="mb-0 fw-light"> {data.title} </h5>
+              </Container>
+            ) : (
+              <Spinner animation="border" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </Spinner>
+            )}
           </Container>
         </Container>
       </Container>

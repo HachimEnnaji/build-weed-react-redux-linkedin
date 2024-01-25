@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { Col } from "react-bootstrap";
 import { HiUserPlus } from "react-icons/hi2";
 import { FaBookmark } from "react-icons/fa6";
 import { Card, ListGroup } from "react-bootstrap/esm";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchSearch } from "../redux/actions/fecthData";
 
 function HomePageDx() {
   const endpoint = "profile";
   const selector = useSelector((state) => state.user.profile);
+  const dispatch = useDispatch();
   const [user, setUser] = useState({
     name: "",
     surname: "",
@@ -21,6 +22,7 @@ function HomePageDx() {
   });
 
   useEffect(() => {
+    dispatch(fetchSearch("me"));
     setUser({
       name: selector.name,
       surname: selector.surname,
