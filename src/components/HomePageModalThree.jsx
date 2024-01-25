@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { RiArticleLine } from "react-icons/ri";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 function HomePageModalThree() {
-  const values = [true, "sm-down", "md-down", "lg-down", "xl-down", "xxl-down"];
+  const values = [true];
   const [fullscreen, setFullscreen] = useState(true);
   const [show, setShow] = useState(false);
 
