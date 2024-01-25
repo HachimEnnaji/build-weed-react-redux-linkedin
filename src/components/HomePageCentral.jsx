@@ -15,6 +15,7 @@ import HomeDeleteModal from "./HomeDeleteModal";
 import { Link } from "react-router-dom";
 import HomePutModal from "./HomePutModal";
 import { BiRepost } from "react-icons/bi";
+import HomePageModalThree from "./HomePageModalThree";
 
 function HomePageCentral() {
   const dispatch = useDispatch();
@@ -76,13 +77,7 @@ function HomePageCentral() {
             )}
             <HomePageModalOne />
             <HomePageModalTwo />
-            <Link to="/HomePageModalArticle">
-              {" "}
-              <Button className="bg-white text-secondary border-0 hoverDiv">
-                <RiArticleLine className="mb-1 text-danger me-1" style={{ width: "24px", height: "24px" }} />
-                Scrivi un articolo
-              </Button>
-            </Link>
+            <HomePageModalThree />
           </div>
         </Card.Body>
       </Card>

@@ -5,6 +5,7 @@ import MyMain from "./components/MyMain";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePages from "./components/HomePages";
 import WorkPages from "./components/HomePages";
+import HomePageModalArticle from "./components/HomePageModalThree";
 
 function App() {
   return (
