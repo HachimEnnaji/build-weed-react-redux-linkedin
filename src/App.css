@@ -53,6 +53,7 @@ div.hover-color:hover {
 }
 .navPlaceholder {
   width: 300px;
+  margin-bottom: 15px;
 }
 div img.img-contain {
   object-fit: contain;
@@ -105,4 +106,13 @@ h6.hover:hover {
 
 div button.disabled-post {
   cursor: not-allowed !important;
+}
+
+.navbar-text {
+  line-height: 1;
+  padding-top: 0.8rem;
+  font-size: 18px;
+  width: 200px;
+  text-align: center;
+  color: #915907 !important;
 }

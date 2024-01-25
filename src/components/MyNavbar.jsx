@@ -198,7 +198,7 @@ function MyNavbar() {
                   </Offcanvas>
 
                   <Navbar.Text>
-                    <a href="#login" className="text-center fs-7">
+                    <a href="#login" className="text-center">
                       Prova Premium <br /> per 0 €
                     </a>
                   </Navbar.Text>

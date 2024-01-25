@@ -14,7 +14,7 @@ function Articles() {
   }, []);
   return (
     <Container>
-      <ul>
+      {/* <ul>
         {articles.results.map((article) => (
           <>
             <li className="fs-6 list-articles" key={article.id}>
@@ -25,7 +25,7 @@ function Articles() {
             </li>
           </>
         ))}
-      </ul>
+      </ul> */}
     </Container>
   );
 }
