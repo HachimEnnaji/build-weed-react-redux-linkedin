@@ -43,7 +43,63 @@ function WorkPageLeft() {
             </Card>
           </Col>
 
-          <Col></Col>
+          <Col>
+            <Card className="my-3">
+              <Card.Header>
+                <div className=" p-2 ">
+                  <Card.Title className="h6 font-weight-bold">
+                    Titolo sezione
+                  </Card.Title>
+                  <Card.Subtitle className=" text-muted">
+                    Sulla base del tuo profilo e della tua cronologia delle
+                    ricerche
+                  </Card.Subtitle>
+                </div>
+              </Card.Header>
+              <Card.Body>
+                <Container className=" p-2 ">
+                  <Row className="d-flex flex-column">
+                    <Col className="">
+                      <Col className=" d-flex">
+                        <div>
+                          <Image rounded Circle src="/" />
+                        </div>
+                        <div>
+                          <div>
+                            <Card.Title className="d-flex h6 text-capitalized">
+                              Titolo lavoro
+                            </Card.Title>
+                            <Card.Subtitle className="my-2 text-muted h6">
+                              Dati Azienda
+                            </Card.Subtitle>
+                            <Card.Text className="d-flex text-muted h6">
+                              <p>data annuncio</p>
+                              <p>candidati</p>
+                              <div className="d-flex">
+                                {" "}
+                                <FaLinkedin /> candidatura semplice
+                              </div>
+                            </Card.Text>
+                          </div>
+                          <Card.Footer className="bg-gray">
+                            <div className=" d-flex justify-content-center">
+                              <Button
+                                className="border-0 bg-transparent text-secondary"
+                                size="sm"
+                              >
+                                Mostra altro
+                              </Button>{" "}
+                            </div>
+                          </Card.Footer>
+                        </div>
+                      </Col>
+                    </Col>
+                  </Row>
+                </Container>
+              </Card.Body>
+            </Card>
+            ;
+          </Col>
         </Col>
       </Row>
     </Container>
@@ -51,44 +107,3 @@ function WorkPageLeft() {
 }
 
 export default WorkPageLeft;
-
-<Card className="my-3" style={{ width: "18rem" }}>
-  <Card.Header className="bg-transparent border-0">
-    <div className=" p-2 ">
-      <Card.Title className="h6 font-weight-bold">Titolo sezione</Card.Title>
-      <Card.Subtitle className=" text-muted">
-        Sulla base del tuo profilo e della tua cronologia delle ricerche
-      </Card.Subtitle>
-    </div>
-  </Card.Header>
-
-        <Card.Body>
-          <Container className=" p-2 ">
-            <Row className="d-flex flex-column">
-              <Col className="">
-                <Col className=" d-flex">
-                  <div>
-                    <Image rounded Circle src="/" />
-                  </div>
-                  <div>
-                    <div>
-                      <Card.Title className="d-flex h6 text-capitalized">
-                        Titolo lavoro
-                      </Card.Title>
-                      <Card.Subtitle className="my-2 text-muted h6">
-                        Dati Azienda
-                      </Card.Subtitle>
-                      <Card.Text className="d-flex text-muted h6">
-                        <p>data annuncio</p>
-                        <p>candidati</p>
-                        <div className="d-flex"> <FaLinkedin /> candidatura semplice</div>
-                      </Card.Text>
-                      <div></div>
-                    </div>
-                  </div>
-                </Col>
-              </Col>
-            </Row>
-          </Container>
-        </Card.Body>
-</Card>;
