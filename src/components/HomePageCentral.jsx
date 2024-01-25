@@ -76,13 +76,13 @@ function HomePageCentral() {
             )}
             <HomePageModalOne />
             <HomePageModalTwo />
-            <a href="#">
+            <Link to="/HomePageModalArticle">
               {" "}
               <Button className="bg-white text-secondary border-0 hoverDiv">
                 <RiArticleLine className="mb-1 text-danger me-1" style={{ width: "24px", height: "24px" }} />
                 Scrivi un articolo
               </Button>
-            </a>
+            </Link>
           </div>
         </Card.Body>
       </Card>
