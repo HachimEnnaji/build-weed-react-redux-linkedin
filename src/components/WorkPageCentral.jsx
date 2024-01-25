@@ -2,7 +2,7 @@
 import { Button, Card, Col, Image, Container, Row } from "react-bootstrap";
 import { FaLinkedin } from "react-icons/fa";
 
-function WorkPageLeft() {
+function WorkPageCentral() {
   return (
     <Container className="pt-2">
       <Row>
@@ -106,4 +106,4 @@ function WorkPageLeft() {
   );
 }
 
-export default WorkPageLeft;
+export default WorkPageCentral;
