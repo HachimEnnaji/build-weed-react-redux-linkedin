@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { RiArticleLine } from "react-icons/ri";
-import { FaItalic, FaList, FaListOl, FaArrowRight } from "react-icons/fa";
-import { FaBold, FaLink } from "react-icons/fa6";
+import { FaItalic, FaList, FaListOl, FaArrowRight, FaPencilAlt } from "react-icons/fa";
+import { FaBold, FaLink, FaArrowUpFromBracket } from "react-icons/fa6";
 import { ImQuotesRight } from "react-icons/im";
 import { PiBracketsCurlyLight } from "react-icons/pi";
 import { GoDash } from "react-icons/go";
@@ -9,7 +9,7 @@ import { IoCodeSlash } from "react-icons/io5";
 import { HiOutlinePhoto } from "react-icons/hi2";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { Container, Dropdown, DropdownButton } from "react-bootstrap";
+import { Col, Container, Dropdown, DropdownButton, Row } from "react-bootstrap";
 
 function HomePageModalThree() {
   const values = [true];
@@ -25,7 +25,7 @@ function HomePageModalThree() {
       {values.map((v, idx) => (
         <Button key={idx} className="bg-white text-secondary border-0 hoverDiv" onClick={() => handleShow(v)}>
           <RiArticleLine className="mb-1 text-danger me-1" style={{ width: "24px", height: "24px" }} />
-          Full screen
+          Scrivi un articolo
           {typeof v === "string" && `below ${v.split("-")[0]}`}
         </Button>
       ))}
@@ -122,7 +122,25 @@ function HomePageModalThree() {
             </Modal.Title>
           </Container>
         </Modal.Header>
-        <Modal.Body>Modal body content</Modal.Body>
+        <Modal.Body>
+          <Row>
+            <Col xs={3}></Col>
+            <Col xs={6}>
+              <div className="text-center bg-light my-auto py-5 border border-1 mb-5">
+                <img src="https://static.licdn.com/aero-v1/sc/h/8x7kwtluy3rlydstzy8b6tywc" className="mb-5" />
+                <p className="mb-5">Consigliamo di caricare o trascinare un’immagine di 1920x1080 pixel</p>
+                <Button className="bg-light hoverDiv me-2 rounded-pill border border-1 border-secondary text-secondary">
+                  <FaArrowUpFromBracket /> Carica dal computer
+                </Button>
+                <Button className="bg-light hoverDiv me-2 rounded-pill border border-1 border-secondary text-secondary">
+                  <FaPencilAlt /> Crea un design
+                </Button>
+              </div>
+              <p className="h1">Qualifica</p>
+            </Col>
+            <Col xs={3}></Col>
+          </Row>
+        </Modal.Body>
       </Modal>
     </>
   );
