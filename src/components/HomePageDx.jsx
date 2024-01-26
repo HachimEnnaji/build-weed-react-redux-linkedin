@@ -1,38 +1,18 @@
-import { useState } from "react";
 import { useEffect } from "react";
 import { HiUserPlus } from "react-icons/hi2";
 import { FaBookmark } from "react-icons/fa6";
 import { Card, ListGroup } from "react-bootstrap/esm";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSearch } from "../redux/actions/fecthData";
+import { Link } from "react-router-dom";
 
 function HomePageDx() {
   const endpoint = "profile";
   const user = useSelector((state) => state.user.profile);
   const dispatch = useDispatch();
-  // const [user, setUser] = useState({
-  //   name: "",
-  //   surname: "",
-  //   email: "",
-  //   username: "",
-  //   bio: "",
-  //   title: "",
-  //   area: "",
-  //   image: "",
-  // });
 
   useEffect(() => {
     dispatch(fetchSearch("me"));
-    // setUser({
-    //   name: selector.name,
-    //   surname: selector.surname,
-    //   email: selector.email,
-    //   username: selector.username,
-    //   bio: selector.bio,
-    //   title: selector.title,
-    //   area: selector.area,
-    //   image: selector.image,
-    // });
   }, []);
   return (
     <Card className="text-center position-relative">
@@ -49,23 +29,27 @@ function HomePageDx() {
       </Card.Header>
 
       <div className="pb-4">
-        <img
-          src={user.image}
-          alt="profile"
-          width={70}
-          height={70}
-          className="rounded-circle object-fit-cover position-absolute top-25 start-50 translate-middle"
-        />
+        <Link to={"/main"}>
+          <img
+            src={user.image}
+            alt="profile"
+            width={70}
+            height={70}
+            className="rounded-circle object-fit-cover position-absolute top-25 start-50 translate-middle"
+          />
+        </Link>
       </div>
       <Card.Body>
         <Card.Title className="fs-6 mt-2">
-          <a href={endpoint} className="h6 text-decoration-none">
-            {user.name}&nbsp;
-            {user.surname}
-          </a>
+          <Link to={"/main"} className="h6 text-decoration-none">
+            <a href={endpoint} className="h6 text-decoration-none">
+              {user.name}&nbsp;
+              {user.surname}
+            </a>
+          </Link>
         </Card.Title>
         <Card.Text className="fs-7">
-          {user.title} presso {user.title}
+          {user.title} presso {user.area}
         </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">

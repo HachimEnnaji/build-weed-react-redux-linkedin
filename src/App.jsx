@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/main" element={<MyMain />}></Route>
           <Route path="/" element={<HomePages />}></Route>
-          <Route path="/query" element={<WorkPage />}></Route>
+          <Route path="/jobs/:category/:query" element={<WorkPage />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

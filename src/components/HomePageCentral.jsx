@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Button, Card, Col, Image, Row } from "react-bootstrap";
+import { Card, Col, Image, Row } from "react-bootstrap";
+import { parseISO, formatDistanceToNow } from "date-fns";
 import HomePageModalOne from "./HomePageModalOne";
 import HomePageModalTwo from "./HomePageModalTwo";
 import HomePageModalZero from "./HomePageModalZero";
@@ -9,7 +10,6 @@ import { AiOutlineLike } from "react-icons/ai";
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
 import { TfiCommentAlt } from "react-icons/tfi";
 import { IoIosSend } from "react-icons/io";
-import { RiArticleLine } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
 import HomeDeleteModal from "./HomeDeleteModal";
 import { Link } from "react-router-dom";
@@ -102,12 +102,11 @@ function HomePageCentral() {
                       </Col>
                       <Col>
                         <div className="px-1">
-                          <p className="fw-semibold m-0">{post.user.username}</p>
-                          <p className="text-gray fs-7 m-0">{post.user.title}</p>
-                          {/* <p className="text-gray fs-7 m-0">
-                              2 giorni <span className="fw-bold"> · </span>
-                              <i className="bi bi-globe-americas"></i>
-                            </p> */}
+                          <p className="fw-semibold fs-5 m-0">{post.user.username}</p>
+                          <p className="text-gray fs-6 m-0">{post.user.title}</p>
+                          <p className="text-muted fs-7 m-0">
+                            {formatDistanceToNow(parseISO(post.user.createdAt))} ago
+                          </p>
                         </div>
                       </Col>
                       <Col xs={2}>
@@ -174,7 +173,14 @@ function HomePageCentral() {
             ))}
           </Row>
         ) : (
-          <p>Nessun post disponibile</p>
+          <>
+            <h3>Nessun post disponibile</h3>
+            <img
+              height={600}
+              src="https://static.vecteezy.com/system/resources/previews/005/006/031/original/no-result-data-document-or-file-not-found-concept-illustration-flat-design-eps10-modern-graphic-element-for-landing-page-empty-state-ui-infographic-icon-etc-vector.jpg"
+              alt="no post found"
+            />
+          </>
         )}
       </Col>
     </>
