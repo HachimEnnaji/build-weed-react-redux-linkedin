@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Card, Col, Image, Row } from "react-bootstrap";
+import { Card, Col, Container, Image, Row } from "react-bootstrap";
 import { parseISO, formatDistanceToNow } from "date-fns";
 import HomePageModalOne from "./HomePageModalOne";
 import HomePageModalTwo from "./HomePageModalTwo";
@@ -81,9 +81,9 @@ function HomePageCentral() {
           </div>
         </Card.Body>
       </Card>
-      <Col className="d-flex flex-column align-items-center">
+      <Row className="d-flex flex-column align-items-center">
         {allPost && allPost.length > 0 ? (
-          <Row className="mt-3">
+          <Container fluid className="mt-3">
             {allPost.slice(0, 20).map((post) => (
               <Col xs={12} className=" mb-3" key={post._id}>
                 <Card className="rounded rounded-3">
@@ -171,18 +171,19 @@ function HomePageCentral() {
                 </Card>
               </Col>
             ))}
-          </Row>
+          </Container>
         ) : (
-          <>
-            <h3>Nessun post disponibile</h3>
-            <img
-              height={600}
-              src="https://static.vecteezy.com/system/resources/previews/005/006/031/original/no-result-data-document-or-file-not-found-concept-illustration-flat-design-eps10-modern-graphic-element-for-landing-page-empty-state-ui-infographic-icon-etc-vector.jpg"
-              alt="no post found"
-            />
-          </>
+          <h3>Nessun post disponibile</h3>
+          // <>
+          //
+          //   <img
+          //     height={600}
+          //     src="https://static.vecteezy.com/system/resources/previews/005/006/031/original/no-result-data-document-or-file-not-found-concept-illustration-flat-design-eps10-modern-graphic-element-for-landing-page-empty-state-ui-infographic-icon-etc-vector.jpg"
+          //     alt="no post found"
+          //   />
+          // </>
         )}
-      </Col>
+      </Row>
     </>
   );
 }
