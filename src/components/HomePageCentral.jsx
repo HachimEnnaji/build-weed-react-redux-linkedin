@@ -141,25 +141,25 @@ function HomePageCentral() {
                         <Link to={"/"} className=" text-decoration-none text-black">
                           <Row>
                             <Col xs={3}>
-                              <div className="d-flex justify-content-center align-items-center hover-color">
+                              <div className="d-flex justify-content-center align-items-center bg-white text-black border-0 hoverDiv btn btn-primary">
                                 <AiOutlineLike size={25} className="me-1" />
                                 <span className="fs-7 text-gray fw-semibold">Consiglia</span>
                               </div>
                             </Col>
                             <Col xs={3}>
-                              <div className="d-flex justify-content-center align-items-center hover-color">
+                              <div className="d-flex justify-content-center align-items-center bg-white text-black border-0 hoverDiv btn btn-primary">
                                 <TfiCommentAlt size={25} className="me-1" />
                                 <span className="fs-7 text-gray fw-semibold">Commenta</span>
                               </div>
                             </Col>
                             <Col xs={3}>
-                              <div className="d-flex justify-content-center align-items-center hover-color">
+                              <div className="d-flex justify-content-center align-items-center hbg-white text-black border-0 hoverDiv btn btn-primaryr">
                                 <BiRepost size={25} className="me-1" />
                                 <span className="fs-7 text-gray fw-semibold">Diffondi il post</span>
                               </div>
                             </Col>
                             <Col xs={3}>
-                              <div className="d-flex justify-content-center align-items-center hover-color">
+                              <div className="d-flex justify-content-center align-items-center hbg-white text-black border-0 hoverDiv btn btn-primaryr">
                                 <IoIosSend size={25} className="me-1" />
                                 <span className="fs-7 text-gray fw-semibold">Invia</span>
                               </div>
