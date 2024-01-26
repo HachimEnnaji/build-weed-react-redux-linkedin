@@ -49,11 +49,6 @@ function MySidebar() {
           </Card.Body>
         </Card>
       </Col>
-
-      <Col>
-        <Card style={{ width: "18rem", height: "16rem" }}>{/*CARD IMAGE */}</Card>
-      </Col>
-
       <Col>
         <Card className="my-3" style={{ width: "18rem" }}>
           <Card.Header className="bg-transparent border-0">

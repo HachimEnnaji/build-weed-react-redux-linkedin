@@ -25,28 +25,25 @@ function WorkPageCentral() {
                 <h3>Ricerche di offerte di lavoro suggerite</h3>
               </div>
               <div className="mb-4 mb-md-0 d-flex flex-wrap" style={{ fontSize: "15px" }}>
-                <div className="pe-3">
+                <div className="m-1">
                   <Button variant="outline-primary">remote</Button>{" "}
                 </div>
-                <div>
+                <div className="m-1">
                   <Button variant="outline-primary">Marketing manager</Button>{" "}
                 </div>
-                <div>
+                <div className="m-1">
                   <Button variant="outline-primary">hr</Button>{" "}
                 </div>
-                <div>
+                <div className="m-1">
                   <Button variant="outline-primary">legal</Button>{" "}
                 </div>
 
-                <div>
+                <div className="m-1">
                   <Button variant="outline-primary">sales</Button>{" "}
                 </div>
 
-                <div className="pe-3">
+                <div className="m-1">
                   <Button variant="outline-primary">amazon</Button>{" "}
-                </div>
-                <div>
-                  <Button variant="outline-primary">google</Button>{" "}
                 </div>
               </div>
             </Card>
@@ -87,13 +84,6 @@ function WorkPageCentral() {
                                     <p>{formatDistanceToNow(parseISO(job.publication_date))} ago</p>
                                   </Card.Text>
                                 </div>
-                                <Card.Footer className="bg-gray">
-                                  <div className=" d-flex justify-content-center">
-                                    <Button className="border-0 bg-transparent text-secondary" size="sm">
-                                      <FaLinkedin /> candidatura semplice
-                                    </Button>{" "}
-                                  </div>
-                                </Card.Footer>
                               </div>
                             </Col>
                           </Col>

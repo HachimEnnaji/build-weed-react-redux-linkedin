@@ -323,7 +323,7 @@ function MyNavbar() {
                   width={45}
                   className="rounded-pill position-relative object-fit-cover"
                 />
-                <Badge bg="success p-2 rounded-pill position-absolute bottom-0 "> </Badge>
+                <Badge bg="success p-2 rounded-pill position-absolute badge "> </Badge>
               </>
             ) : (
               <Spinner animation="border" role="status">

@@ -51,6 +51,10 @@ div.hover-color:hover {
   transform: scale(1.08);
   transition: transform 200ms, background-color 300ms;
 }
+span.badge {
+  left: 145px;
+  bottom: 10px;
+}
 a.premium-gold {
   color: #bb7309;
   font-weight: 300;

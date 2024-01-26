@@ -104,6 +104,7 @@ function HomePageCentral() {
                         <div className="px-1">
                           <p className="fw-semibold fs-5 m-0">{post.user.username}</p>
                           <p className="text-gray fs-6 m-0">{post.user.title}</p>
+
                           <p className="text-muted fs-7 m-0">
                             {formatDistanceToNow(parseISO(post.user.createdAt))} ago
                           </p>
@@ -128,8 +129,19 @@ function HomePageCentral() {
                     {/* post: corpo */}
                     <Row>
                       <Col xs={12}>
-                        <div>
-                          <p className="fs-7">{post.text}</p>
+                        <div className="d-flex flex-column ps-3 pb-2">
+                          <p className="fs-5 ms-5">{post.text}</p>
+                          {post.image ? (
+                            <img
+                              src={post.image}
+                              alt="post"
+                              height={400}
+                              width={550}
+                              className="object-fit-cover mb-2"
+                            />
+                          ) : (
+                            <></>
+                          )}
                         </div>
                       </Col>
                     </Row>
