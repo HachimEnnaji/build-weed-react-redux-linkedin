@@ -66,7 +66,7 @@ function MyNavbar() {
             {/* onSubmit={} */}
             {/* <FaSearch className="magnifying-icon" /> */}
           </Form>
-          <Container>
+          <Container className="pt-3">
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
               <Nav className="me-auto my-2 my-lg-0" navbarScroll>
