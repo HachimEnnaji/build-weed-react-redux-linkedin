@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import logo from "../LinkedIn_icon.svg.png";
-import { Badge, Button, Container, Form, Modal, Nav, NavDropdown, Navbar, Offcanvas, Spinner } from "react-bootstrap";
+import { Badge, Button, Card, Container, Form, Nav, NavDropdown, Navbar, Offcanvas, Spinner } from "react-bootstrap";
 import { FaCaretDown } from "react-icons/fa";
+import { IoAdd } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import { fetchSearch } from "../redux/actions/fecthData";
+import OffcanvasSvg from "./OffcanvasSvg";
 import ModalSearch from "./ModalSearch";
 
 function MyNavbar() {
@@ -229,11 +231,72 @@ function MyNavbar() {
                   </Button>
                   <Offcanvas show={show} onHide={handleClose} placement="end">
                     <Offcanvas.Header closeButton>
-                      <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+                      <Offcanvas.Title>Per le aziende</Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
-                      Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
-                      images, lists, etc.
+                      <OffcanvasSvg />
+                      <Card border="secondary">
+                        <Card.Header className="h6">Scopri altro per il business</Card.Header>
+                        <Card.Body>
+                          <Card.Text>
+                            <ul className="list-unstyled">
+                              <li className="mb-3">
+                                <a href="#" className="text-decoration-none text-black  text-container ">
+                                  <p className="mb-0"> Assumi su LinkedIn</p>
+                                  <span className="fs-7 text-secondary">Trova, attri e assumi</span>
+                                </a>
+                              </li>
+                              <li className="mb-3">
+                                <a href="#" className="text-decoration-none text-black text-container ">
+                                  <p className="mb-0">Vendi con LinkedIn </p>
+                                  <span className="fs-7 text-secondary">Sblocca nuove opportunità di vendita</span>
+                                </a>
+                              </li>
+                              <li className="mb-3">
+                                <a href="#" className="text-decoration-none text-black text-container ">
+                                  <p className="mb-0">Offerta di lavoro gratuita</p>
+                                  <span className="fs-7 text-secondary">Ottieni rapidamente candidati qualificati</span>
+                                </a>
+                              </li>
+                              <li className="mb-3">
+                                <a href="#" className="text-decoration-none text-black text-container ">
+                                  <p className="mb-0">Fai pubblicità su LinkedIn </p>
+                                  <span className="fs-7 text-secondary">
+                                    Acquisisci clienti e fai crescere la tua azienda
+                                  </span>
+                                </a>
+                              </li>
+                              <li className="mb-3">
+                                <a href="#" className="text-decoration-none text-black text-container ">
+                                  <p className="mb-0">Impara con LinkedIn </p>
+                                  <span className="fs-7 text-secondary">Corsi per formare i tuoi dipendenti</span>
+                                </a>
+                              </li>
+                              <li className="mb-3">
+                                <a href="#" className="text-decoration-none text-black text-container ">
+                                  <p className="mb-0">Centro amministrazione </p>
+                                  <span className="fs-7 text-secondary">
+                                    Gestisci i dettagli di fatturazione e account
+                                  </span>
+                                </a>
+                              </li>
+                            </ul>
+                          </Card.Text>
+
+                          <Card.Text>
+                            <ul className="list-unstyled">
+                              {" "}
+                              <li className="mb-2">
+                                <a href="#" className="text-decoration-none text-black text-container ">
+                                  <p className="mb-0">
+                                    Crea una pagina aziendale <IoAdd className="mb-1" />
+                                  </p>
+                                </a>
+                              </li>
+                            </ul>
+                          </Card.Text>
+                        </Card.Body>
+                      </Card>
                     </Offcanvas.Body>
                   </Offcanvas>
 

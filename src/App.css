@@ -122,3 +122,38 @@ div button.disabled-post {
   border-color: #ced4da;
   box-shadow: none !important;
 }
+
+/* ul {
+  list-style: none; 
+  padding: 0; 
+}
+
+li {
+  margin-bottom: 10px; 
+}
+
+a {
+  text-decoration: none; 
+  color: black; 
+  transition: underline 0.3s ease; 
+}
+
+a:hover {
+  text-decoration: underline; 
+} */
+
+.text-decoration-none:hover {
+  text-decoration: underline !important;
+}
+
+.text-container {
+  line-height: 0.8; /* Imposta l'interlinea desiderata (puoi sperimentare con valori più bassi, ad esempio 0.8 o 0.9) */
+}
+
+.text-decoration-none-only {
+  text-decoration: none;
+}
+
+.offcanvasButtonHover:hover {
+  box-shadow: 0 1px 2px rgb(0, 0, 0);
+}
