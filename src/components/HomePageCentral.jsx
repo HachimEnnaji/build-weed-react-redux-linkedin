@@ -174,7 +174,7 @@ function HomePageCentral() {
           </Container>
         ) : (
           <>
-            <h3>Nessun post disponibile</h3>
+            <h3 className="text-center">Nessun post disponibile</h3>
 
             <img
               height={600}
