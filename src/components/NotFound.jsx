@@ -1,3 +1,7 @@
+import React from "react";
+import { Jumbotron, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 function NotFound() {
   return (
     <Jumbotron
