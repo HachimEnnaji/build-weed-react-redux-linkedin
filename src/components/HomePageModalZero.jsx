@@ -9,6 +9,7 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPostHomeAction } from "../redux/actions/fetchEditHomepage";
+import { Link } from "react-router-dom";
 
 function HomePageModalZero() {
   const data = useSelector((state) => state.user.profile);
@@ -36,7 +37,10 @@ function HomePageModalZero() {
 
   return (
     <div className="d-flex align-items-center mb-3">
-      <img src={data.image} alt="profile" width={50} height={50} className="rounded-circle object-fit-cover me-2" />
+      <Link to={"/main"}>
+        <img src={data.image} alt="profile" width={50} height={50} className="rounded-circle object-fit-cover me-2" />
+      </Link>
+
       <div className="flex-grow-2 ">
         <Button
           variant="light"

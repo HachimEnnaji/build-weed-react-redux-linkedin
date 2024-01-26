@@ -1,17 +1,30 @@
 import React, { useState, useEffect } from "react";
 import logo from "../LinkedIn_icon.svg.png";
-import { Button, Container, Form, Nav, NavDropdown, Navbar, Offcanvas, Spinner } from "react-bootstrap";
+import { Badge, Button, Card, Container, Form, Nav, NavDropdown, Navbar, Offcanvas, Spinner } from "react-bootstrap";
 import { FaCaretDown } from "react-icons/fa";
+import { IoAdd } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import { fetchSearch } from "../redux/actions/fecthData";
+import OffcanvasSvg from "./OffcanvasSvg";
+import ModalSearch from "./ModalSearch";
 
 function MyNavbar() {
   const dispatch = useDispatch();
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
+  const handleShow = () => {
+    setShow(true);
+  };
+  const handleShowModal = () => {
+    setSmShow(true);
+  };
+  const handleClose = () => {
+    setShow(false);
+    setSmShow(false);
+  };
+
+  const [show, setShow] = useState(false);
+  const [smShow, setSmShow] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -35,15 +48,21 @@ function MyNavbar() {
     <>
       <Navbar expand="lg" className="bg-white py-0" sticky="top">
         <Container>
-          <img src={logo} alt="logo-linkedin" style={{ height: "35px" }} />
+          <NavLink as={Nav.Link} to={"/"}>
+            {" "}
+            <img src={logo} alt="logo-linkedin" style={{ height: "35px" }} />{" "}
+          </NavLink>
           <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder=" 🔍  Search"
-              className="ms-2 navPlaceholder"
-              style={{ maxHeight: "100px" }}
-              aria-label="Search"
-            />
+            <Button onClick={handleShowModal} className="me-2 bg-transparent border-0">
+              <Form.Control
+                type="search"
+                placeholder=" 🔍  Search"
+                className="ms-2 navPlaceholder"
+                style={{ maxHeight: "100px" }}
+                aria-label="Search"
+              />
+            </Button>
+            <ModalSearch smShow={smShow} onHide={handleClose} />
             {/* onSubmit={} */}
             {/* <FaSearch className="magnifying-icon" /> */}
           </Form>
@@ -51,7 +70,7 @@ function MyNavbar() {
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
               <Nav className="me-auto my-2 my-lg-0" navbarScroll>
-                <NavLink to={"/"} href="#action1" className="me-3  text-center nav-link text-dark">
+                <NavLink as={Nav.Link} to={"/"} href="#action1" className="me-3  text-center nav-link">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -66,7 +85,7 @@ function MyNavbar() {
                   </svg>
                   Home
                 </NavLink>
-                <Nav.Link href="#action2" className="me-3  text-center">
+                <Nav.Link href="#action2" className="me-3  text-center nav-link">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -81,7 +100,12 @@ function MyNavbar() {
                   </svg>
                   Rete
                 </Nav.Link>
-                <Nav.Link href="#action2" className="me-3  text-center">
+                <NavLink
+                  as={Nav.Link}
+                  to={"/jobs/:category/:query"}
+                  href="#action2"
+                  className="me-3  text-center nav-link"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -95,7 +119,7 @@ function MyNavbar() {
                     <path d="M17 6V5a3 3 0 00-3-3h-4a3 3 0 00-3 3v1H2v4a3 3 0 003 3h14a3 3 0 003-3V6zM9 5a1 1 0 011-1h4a1 1 0 011 1v1H9zm10 9a4 4 0 003-1.38V17a3 3 0 01-3 3H5a3 3 0 01-3-3v-4.38A4 4 0 005 14z"></path>
                   </svg>
                   Lavoro
-                </Nav.Link>
+                </NavLink>
                 <Nav.Link href="#action2" className="me-3  text-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +161,7 @@ function MyNavbar() {
                             alt="profile"
                             width={26}
                             height={26}
-                            className=" rounded-circle d-block mt-1 "
+                            className=" rounded-circle d-block mt-1 object-fit-cover "
                           />
                         ) : (
                           <Spinner animation="border" role="status">
@@ -207,11 +231,72 @@ function MyNavbar() {
                   </Button>
                   <Offcanvas show={show} onHide={handleClose} placement="end">
                     <Offcanvas.Header closeButton>
-                      <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+                      <Offcanvas.Title>Per le aziende</Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
-                      Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
-                      images, lists, etc.
+                      <OffcanvasSvg />
+                      <Card border="secondary">
+                        <Card.Header className="h6">Scopri altro per il business</Card.Header>
+                        <Card.Body>
+                          <Card.Text>
+                            <ul className="list-unstyled">
+                              <li className="mb-3">
+                                <a href="#" className="text-decoration-none text-black  text-container ">
+                                  <p className="mb-0"> Assumi su LinkedIn</p>
+                                  <span className="fs-7 text-secondary">Trova, attri e assumi</span>
+                                </a>
+                              </li>
+                              <li className="mb-3">
+                                <a href="#" className="text-decoration-none text-black text-container ">
+                                  <p className="mb-0">Vendi con LinkedIn </p>
+                                  <span className="fs-7 text-secondary">Sblocca nuove opportunità di vendita</span>
+                                </a>
+                              </li>
+                              <li className="mb-3">
+                                <a href="#" className="text-decoration-none text-black text-container ">
+                                  <p className="mb-0">Offerta di lavoro gratuita</p>
+                                  <span className="fs-7 text-secondary">Ottieni rapidamente candidati qualificati</span>
+                                </a>
+                              </li>
+                              <li className="mb-3">
+                                <a href="#" className="text-decoration-none text-black text-container ">
+                                  <p className="mb-0">Fai pubblicità su LinkedIn </p>
+                                  <span className="fs-7 text-secondary">
+                                    Acquisisci clienti e fai crescere la tua azienda
+                                  </span>
+                                </a>
+                              </li>
+                              <li className="mb-3">
+                                <a href="#" className="text-decoration-none text-black text-container ">
+                                  <p className="mb-0">Impara con LinkedIn </p>
+                                  <span className="fs-7 text-secondary">Corsi per formare i tuoi dipendenti</span>
+                                </a>
+                              </li>
+                              <li className="mb-3">
+                                <a href="#" className="text-decoration-none text-black text-container ">
+                                  <p className="mb-0">Centro amministrazione </p>
+                                  <span className="fs-7 text-secondary">
+                                    Gestisci i dettagli di fatturazione e account
+                                  </span>
+                                </a>
+                              </li>
+                            </ul>
+                          </Card.Text>
+
+                          <Card.Text>
+                            <ul className="list-unstyled">
+                              {" "}
+                              <li className="mb-2">
+                                <a href="#" className="text-decoration-none text-black text-container ">
+                                  <p className="mb-0">
+                                    Crea una pagina aziendale <IoAdd className="mb-1" />
+                                  </p>
+                                </a>
+                              </li>
+                            </ul>
+                          </Card.Text>
+                        </Card.Body>
+                      </Card>
                     </Offcanvas.Body>
                   </Offcanvas>
 
@@ -230,19 +315,21 @@ function MyNavbar() {
         <Container fluid>
           <Container className="d-flex">
             {data ? (
-              <img
-                src={data.image}
-                alt="profile"
-                height={45}
-                width={45}
-                className="rounded-pill position-relative object-fit-cover"
-              />
+              <>
+                <img
+                  src={data.image}
+                  alt="profile"
+                  height={45}
+                  width={45}
+                  className="rounded-pill position-relative object-fit-cover"
+                />
+                <Badge bg="success p-2 rounded-pill position-absolute bottom-0 "> </Badge>
+              </>
             ) : (
               <Spinner animation="border" role="status">
                 <span className="visually-hidden">Loading...</span>
               </Spinner>
             )}
-            {/* <Badge bg="success p-2 rounded-pill position-absolute bottom-0 end-0"> </Badge> */}
             {data ? (
               <Container>
                 <h5>

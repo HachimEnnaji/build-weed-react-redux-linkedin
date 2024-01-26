@@ -12,7 +12,13 @@ function App() {
       <BrowserRouter>
         <MyNavbar />
         <Routes>
+<<<<<<< HEAD
           <Route path="/" element={<WorkPage />}></Route>
+=======
+          <Route path="/main" element={<MyMain />}></Route>
+          <Route path="/" element={<HomePages />}></Route>
+          <Route path="/jobs/:category/:query" element={<WorkPage />}></Route>
+>>>>>>> 42d3ed107bc2d61c4a174a85a9a871a8b7c07f73
         </Routes>
       </BrowserRouter>
     </div>

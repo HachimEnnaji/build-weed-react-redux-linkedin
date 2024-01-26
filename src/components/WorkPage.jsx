@@ -9,7 +9,7 @@ function WorkPage() {
   return (
     <Container className="d-flex justify-content-center mt-3">
       <Row>
-        <Col xs={2}>
+        <Col xs={3}>
           <WorkPageDx />
         </Col>
 

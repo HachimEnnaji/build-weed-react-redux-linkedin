@@ -11,11 +11,11 @@ function HomePages() {
   return (
     <Container className="d-flex justify-content-center mt-3">
       <Row>
-        <Col xs={2}>
+        <Col xs={3}>
           <HomePageDx />
         </Col>
 
-        <Col xs={7}>
+        <Col xs={6}>
           <HomePageCentral />
         </Col>
 
