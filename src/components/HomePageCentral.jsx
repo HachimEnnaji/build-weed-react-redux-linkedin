@@ -38,7 +38,7 @@ function HomePageCentral() {
     setFetchTimer(
       setInterval(() => {
         dispatch(fetchHomeAction());
-      }, 10000)
+      }, 20000)
     );
   }, []);
 
@@ -174,7 +174,7 @@ function HomePageCentral() {
           </Container>
         ) : (
           <>
-            <h3>Nessun post disponibile</h3>
+            <h3 className="text-central">Nessun post disponibile</h3>
 
             <img
               height={600}

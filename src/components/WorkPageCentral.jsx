@@ -16,11 +16,11 @@ function WorkPageCentral() {
     dispatch(fetchJobs(params.category, params.query));
   }, [params.category, params.query]);
   return (
-    <Container className="pt-2">
-      <Row>
+    <Container>
+      <Row className="p-1">
         <Col>
           <Col>
-            <Card>
+            <Card className="p-2">
               <div>
                 <h3>Ricerche di offerte di lavoro suggerite</h3>
               </div>
@@ -79,23 +79,18 @@ function WorkPageCentral() {
                                   src="https://cdn.icon-icons.com/icons2/1377/PNG/512/imagexgeneric_92742.png"
                                 />
                               </div>
-                              <div>
+                              <div className="px-2">
                                 <div>
-                                  <Card.Title className="d-flex h6 text-capitalized">{job.title}</Card.Title>
-                                  <Card.Subtitle className="my-2 text-muted h6">{job.company_name}</Card.Subtitle>
+                                  <Card.Title className="d-flex h4 text-capitalized">{job.title}</Card.Title>
+                                  <Card.Subtitle className="my-2 text-muted h5">{job.company_name}</Card.Subtitle>
                                   <Card.Text className="d-flex text-muted h6">
-                                    <p>{formatDistanceToNow(parseISO(job.publication_date))}</p>
-                                    <p>candidati</p>
-                                    <div className="d-flex">
-                                      {" "}
-                                      <FaLinkedin /> candidatura semplice
-                                    </div>
+                                    <p>{formatDistanceToNow(parseISO(job.publication_date))} ago</p>
                                   </Card.Text>
                                 </div>
                                 <Card.Footer className="bg-gray">
                                   <div className=" d-flex justify-content-center">
                                     <Button className="border-0 bg-transparent text-secondary" size="sm">
-                                      Mostra altro
+                                      <FaLinkedin /> candidatura semplice
                                     </Button>{" "}
                                   </div>
                                 </Card.Footer>
