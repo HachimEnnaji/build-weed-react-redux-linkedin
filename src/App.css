@@ -149,3 +149,11 @@ a:hover {
 .text-container {
   line-height: 0.8; /* Imposta l'interlinea desiderata (puoi sperimentare con valori più bassi, ad esempio 0.8 o 0.9) */
 }
+
+.text-decoration-none-only {
+  text-decoration: none;
+}
+
+.offcanvasButtonHover:hover {
+  box-shadow: 0 1px 2px rgb(0, 0, 0);
+}

@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import logo from "../LinkedIn_icon.svg.png";
 import { Button, Card, Container, Form, Nav, NavDropdown, Navbar, Offcanvas, Spinner } from "react-bootstrap";
 import { FaCaretDown } from "react-icons/fa";
+import { IoAdd } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import { fetchSearch } from "../redux/actions/fecthData";
+import OffcanvasSvg from "./OffcanvasSvg";
 
 function MyNavbar() {
   const dispatch = useDispatch();
@@ -210,16 +212,7 @@ function MyNavbar() {
                       <Offcanvas.Title>Per le aziende</Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
-                      <Card border="secondary">
-                        <Card.Header className="h6">Scopri altri prodotti LinkedIn</Card.Header>
-                        <Card.Body>
-                          <Card.Title>Secondary Card Title</Card.Title>
-                          <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of the card's
-                            content.
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
+                      <OffcanvasSvg />
                       <Card border="secondary">
                         <Card.Header className="h6">Scopri altro per il business</Card.Header>
                         <Card.Body>
@@ -271,9 +264,11 @@ function MyNavbar() {
                           <Card.Text>
                             <ul className="list-unstyled">
                               {" "}
-                              <li className="mb-3">
+                              <li className="mb-2">
                                 <a href="#" className="text-decoration-none text-black text-container ">
-                                  <p className="mb-0">Crea una pagina aziendale </p>
+                                  <p className="mb-0">
+                                    Crea una pagina aziendale <IoAdd className="mb-1" />
+                                  </p>
                                 </a>
                               </li>
                             </ul>
