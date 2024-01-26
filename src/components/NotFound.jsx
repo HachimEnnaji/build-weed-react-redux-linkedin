@@ -1,10 +1,10 @@
 import React from "react";
-import { Jumbotron, Container } from "react-bootstrap";
+import { Jumbotron, Container, Alert } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function NotFound() {
   return (
-    <Jumbotron
+    <Alert
       fluid
       className="text-center"
       style={{
@@ -20,7 +20,7 @@ function NotFound() {
           Torna alla Home
         </Link>
       </Container>
-    </Jumbotron>
+    </Alert>
   );
 }
 export default NotFound;
