@@ -117,3 +117,8 @@ div button.disabled-post {
   text-align: center;
   color: #915907 !important;
 }
+
+.form-control:focus {
+  border-color: #ced4da;
+  box-shadow: none !important;
+}
