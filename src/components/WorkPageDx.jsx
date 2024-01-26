@@ -11,76 +11,80 @@ import { SlNote } from "react-icons/sl";
 
 function WorkPagedx() {
   return (
-    <Container>
-      <Col>
-        <Card>
-          <Card.Body>
-            <Container>
-              <Row>
-                <Col className="d-flex flex-column ">
-                  <Col className="d-flex ">
-                    <div className="d-flex align-items-center">
-                      <FaBookmark size={19} />
-                      <div>
-                        <Card.Text className="h6 p-3">le mie offerte di lavoro</Card.Text>
-                      </div>
+    <Col >
+      <Card className="m-0">
+        <Card.Body className="m-0">
+          <Container className="m-0" >
+            <Row style={{ fontSize: "9px" }}>
+              <Col className="d-flex flex-column ">
+                <Col className="d-flex ">
+                  <div className="d-flex my-3">
+                    <FaBookmark fontSize="1.5em" />
+                    <div>
+                      <Card.Text className="mx-3">
+                        le mie offerte di lavoro
+                      </Card.Text>
                     </div>
-                  </Col>
-
-                  <Col className="d-flex">
-                    <div className="d-flex align-items-center">
-                      <FaListUl size={19} />
-                      <div>
-                        <Card.Text className="h6 p-3">Preferenze</Card.Text>
-                      </div>
-                    </div>
-                  </Col>
-
-                  <Col className="d-flex">
-                    <div className="d-flex align-items-center">
-                      <FaRegCalendarCheck size={23} />
-                      <div>
-                        <Card.Text className="h6 p-3">Valutazioni delle competenze</Card.Text>
-                      </div>
-                    </div>
-                  </Col>
-
-                  <Col className="d-flex">
-                    <div className="d-flex align-items-center">
-                      <BsPlayBtnFill size={25} />
-                      <div>
-                        <Card.Text className="h6 p-3">Indicazioni per chi cerca lavoro</Card.Text>
-                      </div>
-                    </div>
-                  </Col>
-
-                  <Col className="d-flex">
-                    <div className="d-flex align-items-center">
-                      <IoMdSettings size={25} />
-                      <div>
-                        <Card.Text className="h6 p-3">Impostazioni candidatura</Card.Text>
-                      </div>
-                    </div>
-                  </Col>
+                  </div>
                 </Col>
-              </Row>
-            </Container>
-          </Card.Body>
-          <Card.Footer className="bg-transparent border-0 p-3">
-            <div className=" d-flex justify-content-center">
-              <Button className=" border-0 bg-transparent text-secondary p-0" size="sm">
-                Mostra altro
-              </Button>{" "}
-            </div>
-          </Card.Footer>
-        </Card>
-        <Col className="d-grid gap-2">
-          <Button variant="primary" size="lg" className="d-flex">
-            <SlNote /> Block level button
-          </Button>
-        </Col>
+
+                <Col className="d-flex my-2">
+                  <div className="d-flex">
+                    <FaListUl fontSize="1.5em" />
+                    <div>
+                      <Card.Text className="mx-3">Preferenze</Card.Text>
+                    </div>
+                  </div>
+                </Col>
+
+                <Col className="d-flex my-2">
+                  <div className="d-flex">
+                    <FaRegCalendarCheck fontSize="1.5em" />
+                    <div>
+                      <Card.Text className="mx-3">
+                        Valutazioni delle competenze
+                      </Card.Text>
+                    </div>
+                  </div>
+                </Col>
+
+                <Col className="d-flex my-2">
+                  <div className="d-flex">
+                    <BsPlayBtnFill fontSize="1.5em" />
+                    <div>
+                      <Card.Text className="mx-3">
+                        Indicazioni per chi cerca lavoro
+                      </Card.Text>
+                    </div>
+                  </div>
+                </Col>
+
+                <Col className="d-flex my-2">
+                  <div className="d-flex">
+                    <IoMdSettings fontSize="1.5em" />
+                    <div>
+                      <Card.Text className="mx-3">
+                        Impostazioni candidatura
+                      </Card.Text>
+                    </div>
+                  </div>
+                </Col>
+              </Col>
+            </Row>
+          </Container>
+        </Card.Body>
+      </Card>
+
+      <Col className="d-grid my-2">
+        <Button
+          variant="outline-primary"
+          size="sm"
+          className="d-flex align-self-center justify-content-center rounded-pill"
+        >
+          <SlNote fontSize="1.3em" /> Pubblica offerta gratuita
+        </Button>
       </Col>
-    </Container>
+    </Col>
   );
 }
 
